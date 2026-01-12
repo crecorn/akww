@@ -64,7 +64,7 @@ export function AdminSidebar() {
                     {item.name}
                   </p>
                   <div className="space-y-1">
-                    {item.items.map((subItem) => {
+                    {item.items?.map((subItem) => {
                       const isActive = pathname === subItem.href
                       return (
                         <Link
