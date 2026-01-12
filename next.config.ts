@@ -404,16 +404,16 @@ const nextConfig: NextConfig = {
       },
 
       // ============================================
-      // SERVICES HUB
+      // SERVICES HUB (redirect trailing slash only)
       // ============================================
       {
-        source: '/services',
-        destination: '/services',
-        permanent: false, // Keep as-is, no redirect needed
+        source: '/services/',
+        destination: '/plumbing-services',
+        permanent: true,
       },
       {
-        source: '/services/',
-        destination: '/services',
+        source: '/services',
+        destination: '/plumbing-services',
         permanent: true,
       },
 
