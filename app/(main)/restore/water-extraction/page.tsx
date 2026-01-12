@@ -96,7 +96,7 @@ export default function WaterExtractionPage() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
             <Waves className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm font-medium">Water Extraction</span>
+            <span className="text-sm font-medium">Water Pump Out & Clean Up</span>
           </div>
 
           {/* Heading */}
@@ -121,7 +121,7 @@ export default function WaterExtractionPage() {
               Call {siteConfig.phone}
             </a>
             <button
-              onClick={() => openBooking('Water Extraction')}
+              onClick={() => openBooking('Water Pump Out & Clean Up')}
               className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold text-lg rounded-lg transition-colors border border-white/20"
             >
               Request Service
@@ -161,7 +161,7 @@ export default function WaterExtractionPage() {
       {/* Services Grid */}
       <section className="bg-slate-50 rounded-2xl p-6 md:p-8">
         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-          Water Extraction Services
+          Water Pump Out & Clean Up Services
         </h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {services.map((service) => {
@@ -299,7 +299,7 @@ export default function WaterExtractionPage() {
             </p>
           </div>
           <button
-            onClick={() => openBooking('Water Extraction')}
+            onClick={() => openBooking('Water Pump Out & Clean Up')}
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-[var(--color-accent)] text-white font-semibold rounded-lg hover:bg-[var(--color-accent-dark)] transition-colors"
           >
             Get Help Now
@@ -351,7 +351,7 @@ export default function WaterExtractionPage() {
           </h2>
           <p className="text-xl text-slate-300 mb-8 max-w-xl mx-auto">
             Standing water causes more damage every minute. 
-            Call now for emergency water extraction.
+            Call now for emergency water pump out.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -362,7 +362,7 @@ export default function WaterExtractionPage() {
               {siteConfig.phone}
             </a>
             <button
-              onClick={() => openBooking('Water Extraction')}
+              onClick={() => openBooking('Water Pump Out & Clean Up')}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-bold text-lg rounded-lg transition-colors"
             >
               Request Service

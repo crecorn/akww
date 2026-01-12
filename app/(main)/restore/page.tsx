@@ -67,7 +67,7 @@ export default function RestorePage() {
 
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
-              From emergency water extraction to permanent basement waterproofing, 
+              From emergency water pump out to permanent basement waterproofing, 
               we protect your home from water damage. Fast response, lasting solutions, 
               and warranties you can trust.
             </p>

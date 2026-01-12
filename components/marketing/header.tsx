@@ -50,7 +50,7 @@ const navigation = [
     href: '/restore',
     children: [
       { name: 'Water Damage Restoration', href: '/restore/water-damage-restoration', description: 'Full recovery services' },
-      { name: 'Water Extraction', href: '/restore/water-extraction', description: 'Emergency removal' },
+      { name: 'Water Pump Out & Clean Up', href: '/restore/water-extraction', description: 'Emergency removal' },
       { name: 'Basement Waterproofing', href: '/restore/basement-waterproofing', description: 'Keep your basement dry' },
       { name: 'Basement Drainage', href: '/restore/basement-drainage', description: 'French drains & more' },
       { name: 'Crawl Space Encapsulation', href: '/restore/crawl-space-encapsulation', description: 'Moisture control' },

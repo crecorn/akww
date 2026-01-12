@@ -9,7 +9,7 @@ import { siteConfig } from '@/lib/constants/site'
 import { useBooking } from '@/components/providers/booking-provider'
 
 const services = [
-  { icon: Droplets, title: 'Water Extraction', desc: 'Fast water removal' },
+  { icon: Droplets, title: 'Water Pump Out & Clean Up', desc: 'Fast water removal' },
   { icon: Home, title: 'Structural Drying', desc: 'Complete dry-out service' },
   { icon: Shield, title: 'Mold Prevention', desc: 'Stop mold before it starts' },
   { icon: FileText, title: 'Insurance Help', desc: 'We work with your insurer' },
@@ -48,7 +48,7 @@ const faqs = [
   },
   { 
     q: 'Will you handle everything?', 
-    a: 'Yes, we provide complete restoration from water extraction through final repairs—flooring, drywall, painting, and more.' 
+    a: 'Yes, we provide complete restoration from water pump out through final repairs—flooring, drywall, painting, and more.' 
   },
 ]
 
@@ -107,7 +107,7 @@ export default function WaterDamageRestorationPage() {
 
           {/* Subheading */}
           <p className="text-xl text-slate-300 mb-8 max-w-2xl">
-            From emergency water extraction to complete restoration. 
+            From emergency water pump out to complete restoration. 
             We handle everything—fast response, insurance coordination, and quality repairs.
           </p>
 

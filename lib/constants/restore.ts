@@ -24,9 +24,9 @@ export const restoreServicesData = [
   },
   {
     slug: 'water-extraction',
-    title: 'Water Extraction',
+    title: 'Water Pump Out & Clean Up',
     shortDescription: 'Emergency water removal services.',
-    description: 'Standing water causes damage every minute it remains. Our water extraction service uses powerful pumps and vacuums to remove water quickly from your home or business. We respond 24/7 to minimize damage and begin the drying process immediately.',
+    description: 'Standing water causes damage every minute it remains. Our water pump out and clean up service uses powerful pumps and vacuums to remove water quickly from your home or business. We respond 24/7 to minimize damage and begin the drying process immediately.',
     iconName: 'Waves',
     features: [
       'Rapid water removal',

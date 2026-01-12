@@ -7,7 +7,7 @@ import { siteConfig } from '@/lib/constants/site'
 const SERVICE_TYPES = [
   'Water Damage - Emergency',
   'Water Damage - Restoration',
-  'Water Extraction',
+  'Water Pump Out & Clean Up',
   'Basement Waterproofing',
   'Basement Drainage / French Drain',
   'Crawl Space Encapsulation',
