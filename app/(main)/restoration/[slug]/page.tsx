@@ -1,15 +1,15 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { 
-  Droplets, Waves, Shield, ArrowDownToLine, Home,
+import {
+  Droplets, Waves,
   CheckCircle2, Phone, AlertTriangle
 } from 'lucide-react'
-import { restoreServicesData } from '@/lib/constants/restore'
+import { restorationServicesData } from '@/lib/constants/restoration'
 import { siteConfig } from '@/lib/constants/site'
-import { RestoreCTA } from '@/components/restore'
+import { RestorationCTA } from '@/components/restoration'
 
 const iconMap: Record<string, typeof Droplets> = {
-  Droplets, Waves, Shield, ArrowDownToLine, Home,
+  Droplets, Waves,
 }
 
 interface Props {
@@ -17,58 +17,55 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return restoreServicesData.map((service) => ({
+  return restorationServicesData.map((service) => ({
     slug: service.slug,
   }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const service = restoreServicesData.find(s => s.slug === params.slug)
+  const service = restorationServicesData.find(s => s.slug === params.slug)
   if (!service) return { title: 'Service Not Found' }
-  
+
   return {
     title: `${service.title} | AK Water Works`,
     description: service.description,
   }
 }
 
-export default function RestoreServicePage({ params }: Props) {
-  const service = restoreServicesData.find(s => s.slug === params.slug)
-  
+export default function RestorationServicePage({ params }: Props) {
+  const service = restorationServicesData.find(s => s.slug === params.slug)
+
   if (!service) {
     notFound()
   }
 
   const Icon = iconMap[service.iconName] || Droplets
-  const isEmergencyService = service.slug === 'water-damage-restoration' || service.slug === 'water-extraction'
 
   return (
     <div className="space-y-8">
-      {/* Emergency Banner for water damage services */}
-      {isEmergencyService && (
-        <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-4">
-          <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0" />
-          <div className="flex-1">
-            <h2 className="font-bold text-red-800">24/7 Emergency Response</h2>
-            <p className="text-red-700 text-sm mt-1">
-              Water damage gets worse every minute. Call now for immediate help.
-            </p>
-          </div>
-          <a
-            href={`tel:${siteConfig.phoneRaw}`}
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-colors text-sm"
-          >
-            <Phone className="w-4 h-4" />
-            Emergency Line
-          </a>
+      {/* Emergency Banner */}
+      <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-4">
+        <AlertTriangle className="w-6 h-6 text-red-500 flex-shrink-0" />
+        <div className="flex-1">
+          <h2 className="font-bold text-red-800">24/7 Emergency Response</h2>
+          <p className="text-red-700 text-sm mt-1">
+            Water damage gets worse every minute. Call now for immediate help.
+          </p>
         </div>
-      )}
+        <a
+          href={`tel:${siteConfig.phoneRaw}`}
+          className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-colors text-sm"
+        >
+          <Phone className="w-4 h-4" />
+          Emergency Line
+        </a>
+      </div>
 
       {/* Hero */}
       <header className="bg-gradient-to-br from-[var(--color-primary)] to-blue-800 rounded-2xl p-6 md:p-10 text-white">
         <div className="flex items-center gap-2 text-blue-200 mb-4">
           <Icon className="w-5 h-5" />
-          <span className="font-medium">Restore Services</span>
+          <span className="font-medium">Restoration Services</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold mb-4">
           {service.title}
@@ -76,7 +73,7 @@ export default function RestoreServicePage({ params }: Props) {
         <p className="text-lg text-blue-100 mb-6 max-w-2xl">
           {service.description}
         </p>
-        <RestoreCTA variant="hero" service={service.title} />
+        <RestorationCTA variant="hero" service={service.title} />
       </header>
 
       {/* Features */}
@@ -111,38 +108,6 @@ export default function RestoreServicePage({ params }: Props) {
         </div>
       </section>
 
-      {/* Warning Signs - For waterproofing services */}
-      {(service.slug === 'basement-waterproofing' || service.slug === 'basement-drainage' || service.slug === 'crawl-space-encapsulation') && (
-        <section className="bg-amber-50 border border-amber-200 rounded-2xl p-6 md:p-8">
-          <div className="flex items-start gap-4 mb-6">
-            <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0" />
-            <div>
-              <h2 className="text-xl font-bold text-slate-900">
-                Signs You Need {service.title}
-              </h2>
-              <p className="text-slate-600 mt-1">
-                Don't ignore these warning signs
-              </p>
-            </div>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-3">
-            {[
-              'Water seeping through walls',
-              'Musty odors',
-              'Visible cracks',
-              'White mineral deposits',
-              'Mold or mildew',
-              'Standing water after rain',
-            ].map((sign, index) => (
-              <div key={index} className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                <span className="text-slate-700">{sign}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
       {/* Image Placeholders */}
       <section>
         <h2 className="text-2xl font-bold text-slate-900 mb-6">
@@ -150,7 +115,7 @@ export default function RestoreServicePage({ params }: Props) {
         </h2>
         <div className="grid grid-cols-3 gap-4">
           {[1, 2, 3].map((i) => (
-            <div 
+            <div
               key={i}
               className="aspect-[4/3] bg-slate-200 rounded-xl border-2 border-dashed border-slate-300 flex items-center justify-center"
             >
@@ -170,15 +135,12 @@ export default function RestoreServicePage({ params }: Props) {
       {/* CTA */}
       <section className="bg-[var(--color-primary)] rounded-2xl p-6 md:p-8 text-white text-center">
         <h2 className="text-2xl font-bold mb-3">
-          {isEmergencyService ? 'Need Emergency Help?' : 'Ready for a Free Estimate?'}
+          Need Emergency Help?
         </h2>
         <p className="text-blue-100 mb-6">
-          {isEmergencyService 
-            ? 'Our team is standing by 24/7 to respond to water emergencies.'
-            : `Contact us today for a free inspection and estimate on ${service.title.toLowerCase()}.`
-          }
+          Our team is standing by 24/7 to respond to water emergencies.
         </p>
-        <RestoreCTA variant="emergency" service={service.title} />
+        <RestorationCTA variant="emergency" service={service.title} />
       </section>
     </div>
   )

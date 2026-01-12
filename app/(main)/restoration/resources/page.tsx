@@ -64,13 +64,13 @@ const faqs = [
   },
 ]
 
-export default function RestoreResourcesPage() {
+export default function RestorationResourcesPage() {
   return (
     <div className="space-y-12">
       <header>
         <div className="flex items-center gap-2 text-[var(--color-primary)] mb-2">
           <Droplets className="w-5 h-5" />
-          <span className="font-medium">Restore Services</span>
+          <span className="font-medium">Restoration Services</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
           Water Damage & Waterproofing Resources
@@ -153,7 +153,7 @@ export default function RestoreResourcesPage() {
             {siteConfig.phone}
           </a>
           <Link
-            href="/restore/contact"
+            href="/restoration/contact"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[var(--color-accent)] text-white font-bold rounded-lg hover:bg-[var(--color-accent-dark)] transition-colors"
           >
             Schedule Free Estimate <ArrowRight className="w-5 h-5" />

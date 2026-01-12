@@ -258,6 +258,56 @@ const nextConfig: NextConfig = {
       },
 
       // ============================================
+      // RESTORE → RESTORATION REDIRECTS
+      // ============================================
+      {
+        source: '/restore',
+        destination: '/restoration',
+        permanent: true,
+      },
+      {
+        source: '/restore/',
+        destination: '/restoration',
+        permanent: true,
+      },
+      {
+        source: '/restore/water-damage-restoration',
+        destination: '/restoration/water-damage-restoration',
+        permanent: true,
+      },
+      {
+        source: '/restore/water-extraction',
+        destination: '/restoration/water-extraction',
+        permanent: true,
+      },
+      {
+        source: '/restore/contact',
+        destination: '/restoration/contact',
+        permanent: true,
+      },
+      {
+        source: '/restore/resources',
+        destination: '/restoration/resources',
+        permanent: true,
+      },
+      // Old waterproofing pages from /restore → new /waterproofing hub
+      {
+        source: '/restore/basement-waterproofing',
+        destination: '/waterproofing/basement-waterproofing',
+        permanent: true,
+      },
+      {
+        source: '/restore/basement-drainage',
+        destination: '/waterproofing/basement-drainage',
+        permanent: true,
+      },
+      {
+        source: '/restore/crawl-space-encapsulation',
+        destination: '/waterproofing/crawl-space-encapsulation',
+        permanent: true,
+      },
+
+      // ============================================
       // WATER DAMAGE SERVICES
       // ============================================
       {

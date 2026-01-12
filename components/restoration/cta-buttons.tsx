@@ -4,12 +4,12 @@ import { Phone, ArrowRight } from 'lucide-react'
 import { siteConfig } from '@/lib/constants/site'
 import { useBooking } from '@/components/providers/booking-provider'
 
-interface RestoreCTAProps {
+interface RestorationCTAProps {
   variant?: 'hero' | 'section' | 'emergency'
   service?: string
 }
 
-export function RestoreCTA({ variant = 'section', service }: RestoreCTAProps) {
+export function RestorationCTA({ variant = 'section', service }: RestorationCTAProps) {
   const { openBookingModal } = useBooking()
 
   if (variant === 'hero') {

@@ -1,49 +1,49 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { 
-  Droplets, Waves, Shield, ArrowDownToLine, Home,
-  ArrowRight, Phone, Clock, Award, AlertTriangle, Star, Users
+import {
+  Droplets, Waves,
+  ArrowRight, Phone, Clock, Award, AlertTriangle, Star, Users, Shield
 } from 'lucide-react'
-import { restoreServicesData } from '@/lib/constants/restore'
+import { restorationServicesData } from '@/lib/constants/restoration'
 import { siteConfig } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
-  title: 'Water Damage Restoration & Waterproofing | AK Water Works',
-  description: 'Professional water damage restoration, basement waterproofing, and moisture control services in Northeast Ohio. 24/7 emergency response. Free estimates.',
+  title: 'Water Damage Restoration Services | AK Water Works',
+  description: 'Professional water damage restoration and emergency water removal services in Northeast Ohio. 24/7 emergency response. IICRC certified. Free estimates.',
 }
 
 const iconMap: Record<string, typeof Droplets> = {
-  Droplets, Waves, Shield, ArrowDownToLine, Home,
+  Droplets, Waves,
 }
 
 const trustIndicators = [
   { stat: 'Fast', label: 'Response Time' },
   { stat: '24/7', label: 'Emergency Service' },
   { stat: 'IICRC', label: 'Certified' },
-  { stat: 'Lifetime', label: 'Warranties' },
+  { stat: '100%', label: 'Satisfaction' },
 ]
 
 const processSteps = [
   { step: '1', title: 'Emergency Contact', desc: 'Call 24/7 for immediate response' },
   { step: '2', title: 'Assessment', desc: 'We inspect and document damage' },
   { step: '3', title: 'Mitigation', desc: 'Stop damage and begin drying' },
-  { step: '4', title: 'Restoration', desc: 'Complete repairs and prevention' },
+  { step: '4', title: 'Restoration', desc: 'Complete repairs and cleanup' },
 ]
 
 const whyChooseUs = [
   { icon: Clock, title: '24/7 Emergency Response', desc: 'Water damage doesn\'t wait. Neither do we.' },
   { icon: Award, title: 'IICRC Certified', desc: 'Industry-certified restoration technicians.' },
-  { icon: Shield, title: 'Lifetime Warranties', desc: 'Waterproofing backed by transferable warranties.' },
+  { icon: Shield, title: 'Insurance Assistance', desc: 'We work with your insurance company.' },
   { icon: Users, title: 'Experienced Team', desc: 'Skilled technicians with years of experience.' },
 ]
 
-export default function RestorePage() {
+export default function RestorationPage() {
   return (
     <>
       {/* Full-Width Hero */}
       <section className="relative min-h-[600px] md:min-h-[700px] flex items-center text-white overflow-hidden">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-top bg-no-repeat"
           style={{ backgroundImage: "url('/images/Hero-Restoration.webp')" }}
         />
@@ -56,20 +56,20 @@ export default function RestorePage() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <Droplets className="w-4 h-4" />
-              <span className="text-sm font-medium tracking-wide uppercase">Restore Services</span>
+              <span className="text-sm font-medium tracking-wide uppercase">Restoration Services</span>
             </div>
 
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Water Damage &
-              <span className="block text-[var(--color-accent)]">Waterproofing Experts</span>
+              Water Damage
+              <span className="block text-[var(--color-accent)]">Restoration Experts</span>
             </h1>
 
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
-              From emergency water pump out to permanent basement waterproofing, 
-              we protect your home from water damage. Fast response, lasting solutions, 
-              and warranties you can trust.
+              When water damage strikes, every minute counts. Our certified restoration
+              team responds 24/7 to extract water, dry your property, and restore
+              your home to pre-loss condition.
             </p>
 
             {/* CTAs */}
@@ -82,7 +82,7 @@ export default function RestorePage() {
                 Emergency: {siteConfig.phone}
               </a>
               <Link
-                href="/restore/contact"
+                href="/restoration/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold text-lg rounded-lg transition-colors border border-white/20"
               >
                 Free Estimate
@@ -133,21 +133,21 @@ export default function RestorePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Our Restore Services
+              Our Restoration Services
             </h2>
             <p className="text-lg text-slate-600">
-              Complete water damage restoration and waterproofing solutions. 
-              From emergency response to long-term prevention, we do it all.
+              Complete water damage restoration services. From emergency water extraction
+              to full property restoration, we handle it all.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {restoreServicesData.map((service) => {
+          <div className="grid md:grid-cols-2 gap-6">
+            {restorationServicesData.map((service) => {
               const Icon = iconMap[service.iconName] || Droplets
               return (
                 <Link
                   key={service.slug}
-                  href={`/restore/${service.slug}`}
+                  href={`/restoration/${service.slug}`}
                   className="group bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-xl hover:border-slate-300 transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
@@ -169,6 +169,19 @@ export default function RestorePage() {
                 </Link>
               )
             })}
+          </div>
+
+          {/* Link to Waterproofing */}
+          <div className="mt-8 p-6 bg-white rounded-xl border border-slate-200">
+            <p className="text-slate-600 mb-4">
+              <strong>Looking for waterproofing services?</strong> Prevent future water damage with our basement waterproofing solutions.
+            </p>
+            <Link
+              href="/waterproofing"
+              className="inline-flex items-center gap-2 text-[var(--color-primary)] font-semibold hover:gap-3 transition-all"
+            >
+              View Waterproofing Services <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -211,7 +224,7 @@ export default function RestorePage() {
               Why Choose AK Water Works
             </h2>
             <p className="text-lg text-slate-400">
-              We combine rapid response with lasting solutions to protect your home from water damage.
+              We combine rapid response with professional restoration to get your life back to normal.
             </p>
           </div>
 
@@ -250,8 +263,8 @@ export default function RestorePage() {
                 <span className="text-green-100">({siteConfig.reviews.count}+ reviews)</span>
               </div>
               <p className="text-green-100 mb-6">
-                Homeowners trust us when water damage strikes. 
-                See why we&apos;re the top choice for restoration and waterproofing.
+                Homeowners trust us when water damage strikes.
+                See why we&apos;re the top choice for water damage restoration.
               </p>
               <Link
                 href="/reviews"
@@ -263,8 +276,8 @@ export default function RestorePage() {
 
             <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                &quot;Our basement flooded at 2 AM. AK Water Works was here within an hour 
-                and had all the water extracted by morning. They even helped with our 
+                &quot;Our basement flooded at 2 AM. AK Water Works was here within an hour
+                and had all the water extracted by morning. They even helped with our
                 insurance claim. Lifesavers!&quot;
               </blockquote>
               <p className="font-semibold text-slate-900">— Sarah M., Warren, OH</p>
@@ -277,11 +290,11 @@ export default function RestorePage() {
       <section className="py-16 md:py-20 bg-[var(--color-primary)]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Protect Your Home from Water Damage
+            Water Damage Emergency?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Whether you&apos;re dealing with an emergency or want to prevent future problems, 
-            we&apos;re here to help. Free estimates on waterproofing services.
+            Don&apos;t wait—water damage gets worse by the minute.
+            Call now for 24/7 emergency water damage restoration.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -292,10 +305,10 @@ export default function RestorePage() {
               {siteConfig.phone}
             </a>
             <Link
-              href="/restore/contact"
+              href="/restoration/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-bold text-lg rounded-lg transition-colors"
             >
-              Schedule Free Estimate
+              Request Service
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

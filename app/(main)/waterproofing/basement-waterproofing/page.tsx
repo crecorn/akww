@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { 
+import {
   Phone, CheckCircle2, ArrowRight, ArrowLeft, Shield, Star,
   Home, Wrench, Droplets, FileCheck, AlertTriangle
 } from 'lucide-react'
@@ -34,21 +34,21 @@ const signs = [
 ]
 
 const faqs = [
-  { 
-    q: 'What causes a wet basement?', 
-    a: 'Common causes include poor drainage, hydrostatic pressure, foundation cracks, window wells, and high water tables. We diagnose the exact cause during our free inspection.' 
+  {
+    q: 'What causes a wet basement?',
+    a: 'Common causes include poor drainage, hydrostatic pressure, foundation cracks, window wells, and high water tables. We diagnose the exact cause during our free inspection.'
   },
-  { 
-    q: 'Interior vs exterior waterproofing?', 
-    a: 'Interior systems manage water that enters. Exterior systems prevent water from reaching the foundation. We often recommend interior solutions as they\'re effective and less disruptive.' 
+  {
+    q: 'Interior vs exterior waterproofing?',
+    a: 'Interior systems manage water that enters. Exterior systems prevent water from reaching the foundation. We often recommend interior solutions as they\'re effective and less disruptive.'
   },
-  { 
-    q: 'How long does waterproofing take?', 
-    a: 'Most interior waterproofing jobs take 1-3 days. Exterior work takes longer. We\'ll give you a timeline during your free estimate.' 
+  {
+    q: 'How long does waterproofing take?',
+    a: 'Most interior waterproofing jobs take 1-3 days. Exterior work takes longer. We\'ll give you a timeline during your free estimate.'
   },
-  { 
-    q: 'Is your work guaranteed?', 
-    a: 'Yes! We offer a lifetime transferable warranty on our waterproofing systems. If your basement leaks, we fix it free.' 
+  {
+    q: 'Is your work guaranteed?',
+    a: 'Yes! We offer a lifetime transferable warranty on our waterproofing systems. If your basement leaks, we fix it free.'
   },
 ]
 
@@ -69,12 +69,12 @@ export default function BasementWaterproofingPage() {
         <div className="relative">
           {/* Breadcrumb */}
           <nav className="mb-6">
-            <Link 
-              href="/restore" 
+            <Link
+              href="/waterproofing"
               className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Restore Services
+              Back to Waterproofing Services
             </Link>
           </nav>
 
@@ -92,7 +92,7 @@ export default function BasementWaterproofingPage() {
 
           {/* Subheading */}
           <p className="text-xl text-slate-300 mb-8 max-w-2xl">
-            Professional basement waterproofing with a lifetime warranty. 
+            Professional basement waterproofing with a lifetime warranty.
             Interior and exterior solutions to keep your basement permanently dry.
           </p>
 
@@ -134,9 +134,9 @@ export default function BasementWaterproofingPage() {
         {/* Jack Mascot */}
         <div className="hidden lg:block absolute bottom-4 right-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/images/Jack w Wrench.svg" 
-            alt="" 
+          <img
+            src="/images/Jack w Wrench.svg"
+            alt=""
             className="h-36 w-auto opacity-90"
             aria-hidden="true"
           />
@@ -152,7 +152,7 @@ export default function BasementWaterproofingPage() {
           {services.map((service) => {
             const Icon = service.icon
             return (
-              <div 
+              <div
                 key={service.title}
                 className="bg-white rounded-xl p-5 shadow-sm border border-slate-200 flex items-start gap-4"
               >
@@ -176,7 +176,7 @@ export default function BasementWaterproofingPage() {
         </h2>
         <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-4 md:overflow-visible md:pb-0">
           {[1, 2, 3, 4].map((num) => (
-            <div 
+            <div
               key={num}
               className="flex-shrink-0 w-[180px] md:w-auto snap-center"
             >
@@ -271,15 +271,15 @@ export default function BasementWaterproofingPage() {
         {/* Jack Callout */}
         <div className="mt-8 flex items-center gap-4 bg-slate-800 rounded-xl p-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/images/Jack w Wrench.svg" 
-            alt="" 
+          <img
+            src="/images/Jack w Wrench.svg"
+            alt=""
             className="h-16 w-auto"
             aria-hidden="true"
           />
           <div className="flex-1">
             <p className="text-slate-300">
-              <strong className="text-white">Jack says:</strong> &quot;A dry basement protects 
+              <strong className="text-white">Jack says:</strong> &quot;A dry basement protects
               your home&apos;s value and your family&apos;s health. Don&apos;t ignore water problems!&quot;
             </p>
           </div>
@@ -299,8 +299,8 @@ export default function BasementWaterproofingPage() {
         </h2>
         <div className="space-y-4">
           {faqs.map((faq) => (
-            <div 
-              key={faq.q} 
+            <div
+              key={faq.q}
               className="bg-white rounded-xl p-5 shadow-sm border border-slate-200"
             >
               <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
@@ -320,7 +320,7 @@ export default function BasementWaterproofingPage() {
           </div>
           <div className="flex-1 text-white">
             <blockquote className="text-lg italic mb-2">
-              &quot;Had water in our basement for years. AK Water Works installed an interior 
+              &quot;Had water in our basement for years. AK Water Works installed an interior
               drain system and sump pump—basement has been bone dry ever since!&quot;
             </blockquote>
             <p className="font-semibold">— George & Martha H., Youngstown, OH</p>
@@ -335,7 +335,7 @@ export default function BasementWaterproofingPage() {
             Ready for a Dry Basement?
           </h2>
           <p className="text-xl text-slate-300 mb-8 max-w-xl mx-auto">
-            Get a free inspection and quote. Our lifetime warranty 
+            Get a free inspection and quote. Our lifetime warranty
             means you&apos;ll never worry about basement water again.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -358,9 +358,9 @@ export default function BasementWaterproofingPage() {
           {/* Final Jack */}
           <div className="mt-8 flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="/images/Jack w Wrench.svg" 
-              alt="" 
+            <img
+              src="/images/Jack w Wrench.svg"
+              alt=""
               className="h-20 w-auto opacity-80"
               aria-hidden="true"
             />

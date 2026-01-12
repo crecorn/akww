@@ -46,15 +46,22 @@ const navigation = [
     ],
   },
   {
-    name: 'Restore',
-    href: '/restore',
+    name: 'Restoration',
+    href: '/restoration',
     children: [
-      { name: 'Water Damage Restoration', href: '/restore/water-damage-restoration', description: 'Full recovery services' },
-      { name: 'Water Pump Out & Clean Up', href: '/restore/water-extraction', description: 'Emergency removal' },
-      { name: 'Basement Waterproofing', href: '/restore/basement-waterproofing', description: 'Keep your basement dry' },
-      { name: 'Basement Drainage', href: '/restore/basement-drainage', description: 'French drains & more' },
-      { name: 'Crawl Space Encapsulation', href: '/restore/crawl-space-encapsulation', description: 'Moisture control' },
-      { name: 'All Restore Services →', href: '/restore' },
+      { name: 'Water Damage Restoration', href: '/restoration/water-damage-restoration', description: 'Full recovery services' },
+      { name: 'Water Pump Out & Clean Up', href: '/restoration/water-extraction', description: 'Emergency removal' },
+      { name: 'All Restoration Services →', href: '/restoration' },
+    ],
+  },
+  {
+    name: 'Waterproofing',
+    href: '/waterproofing',
+    children: [
+      { name: 'Basement Waterproofing', href: '/waterproofing/basement-waterproofing', description: 'Keep your basement dry' },
+      { name: 'Basement Drainage', href: '/waterproofing/basement-drainage', description: 'French drains & more' },
+      { name: 'Crawl Space Encapsulation', href: '/waterproofing/crawl-space-encapsulation', description: 'Moisture control' },
+      { name: 'All Waterproofing Services →', href: '/waterproofing' },
     ],
   },
   {

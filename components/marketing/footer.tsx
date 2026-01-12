@@ -11,7 +11,8 @@ const footerLinks = {
     { name: 'Plumbing', href: '/plumbing-services' },
     { name: 'Sewer & Drain', href: '/sewer-drain' },
     { name: 'Commercial', href: '/commercial' },
-    { name: 'Restore (Water Damage)', href: '/restore' },
+    { name: 'Restoration', href: '/restoration' },
+    { name: 'Waterproofing', href: '/waterproofing' },
     { name: '24/7 Emergency', href: '/commercial/emergency' },
   ],
   company: [

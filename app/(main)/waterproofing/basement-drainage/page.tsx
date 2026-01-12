@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { 
+import {
   Phone, CheckCircle2, ArrowRight, ArrowLeft, Clock, Shield, Star,
   Waves, ArrowDownToLine, Home, Wrench, AlertTriangle
 } from 'lucide-react'
@@ -34,21 +34,21 @@ const signs = [
 ]
 
 const faqs = [
-  { 
-    q: 'What is a French drain?', 
-    a: 'A French drain is a trench filled with gravel and a perforated pipe that collects water and directs it to a sump basin. It\'s installed along the perimeter of your basement floor.' 
+  {
+    q: 'What is a French drain?',
+    a: 'A French drain is a trench filled with gravel and a perforated pipe that collects water and directs it to a sump basin. It\'s installed along the perimeter of your basement floor.'
   },
-  { 
-    q: 'Will you need to break up my floor?', 
-    a: 'Yes, interior French drains require removing a strip of concrete along the basement perimeter. We restore the concrete when finished and clean up thoroughly.' 
+  {
+    q: 'Will you need to break up my floor?',
+    a: 'Yes, interior French drains require removing a strip of concrete along the basement perimeter. We restore the concrete when finished and clean up thoroughly.'
   },
-  { 
-    q: 'How long does installation take?', 
-    a: 'Most basement drainage installations take 2-4 days depending on basement size. We work efficiently to minimize disruption.' 
+  {
+    q: 'How long does installation take?',
+    a: 'Most basement drainage installations take 2-4 days depending on basement size. We work efficiently to minimize disruption.'
   },
-  { 
-    q: 'Do I need a sump pump too?', 
-    a: 'Usually yes. French drains collect water and direct it to a sump basin, where a sump pump removes it from your home. We typically install both together.' 
+  {
+    q: 'Do I need a sump pump too?',
+    a: 'Usually yes. French drains collect water and direct it to a sump basin, where a sump pump removes it from your home. We typically install both together.'
   },
 ]
 
@@ -69,12 +69,12 @@ export default function BasementDrainagePage() {
         <div className="relative">
           {/* Breadcrumb */}
           <nav className="mb-6">
-            <Link 
-              href="/restore" 
+            <Link
+              href="/waterproofing"
               className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Restore Services
+              Back to Waterproofing Services
             </Link>
           </nav>
 
@@ -92,7 +92,7 @@ export default function BasementDrainagePage() {
 
           {/* Subheading */}
           <p className="text-xl text-slate-300 mb-8 max-w-2xl">
-            Proper drainage is the key to a dry basement. We design and install 
+            Proper drainage is the key to a dry basement. We design and install
             French drain systems that collect and redirect water before it causes damage.
           </p>
 
@@ -134,9 +134,9 @@ export default function BasementDrainagePage() {
         {/* Jack Mascot */}
         <div className="hidden lg:block absolute bottom-4 right-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/images/Jack w Wrench.svg" 
-            alt="" 
+          <img
+            src="/images/Jack w Wrench.svg"
+            alt=""
             className="h-36 w-auto opacity-90"
             aria-hidden="true"
           />
@@ -152,7 +152,7 @@ export default function BasementDrainagePage() {
           {services.map((service) => {
             const Icon = service.icon
             return (
-              <div 
+              <div
                 key={service.title}
                 className="bg-white rounded-xl p-5 shadow-sm border border-slate-200 flex items-start gap-4"
               >
@@ -176,7 +176,7 @@ export default function BasementDrainagePage() {
         </h2>
         <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-4 md:overflow-visible md:pb-0">
           {[1, 2, 3, 4].map((num) => (
-            <div 
+            <div
               key={num}
               className="flex-shrink-0 w-[180px] md:w-auto snap-center"
             >
@@ -271,15 +271,15 @@ export default function BasementDrainagePage() {
         {/* Jack Callout */}
         <div className="mt-8 flex items-center gap-4 bg-slate-800 rounded-xl p-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/images/Jack w Wrench.svg" 
-            alt="" 
+          <img
+            src="/images/Jack w Wrench.svg"
+            alt=""
             className="h-16 w-auto"
             aria-hidden="true"
           />
           <div className="flex-1">
             <p className="text-slate-300">
-              <strong className="text-white">Jack says:</strong> &quot;A good drainage system 
+              <strong className="text-white">Jack says:</strong> &quot;A good drainage system
               catches water before it ever becomes a problem. That&apos;s smart thinking!&quot;
             </p>
           </div>
@@ -299,8 +299,8 @@ export default function BasementDrainagePage() {
         </h2>
         <div className="space-y-4">
           {faqs.map((faq) => (
-            <div 
-              key={faq.q} 
+            <div
+              key={faq.q}
               className="bg-white rounded-xl p-5 shadow-sm border border-slate-200"
             >
               <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
@@ -320,7 +320,7 @@ export default function BasementDrainagePage() {
           </div>
           <div className="flex-1 text-white">
             <blockquote className="text-lg italic mb-2">
-              &quot;After every heavy rain, we had water in our basement. They installed a 
+              &quot;After every heavy rain, we had water in our basement. They installed a
               French drain system around the perimeter and now it stays completely dry!&quot;
             </blockquote>
             <p className="font-semibold">— Steve & Nancy M., Cortland, OH</p>
@@ -335,7 +335,7 @@ export default function BasementDrainagePage() {
             Solve Your Water Problem
           </h2>
           <p className="text-xl text-slate-300 mb-8 max-w-xl mx-auto">
-            A properly designed drainage system keeps your basement dry 
+            A properly designed drainage system keeps your basement dry
             for good. Get your free estimate today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -358,9 +358,9 @@ export default function BasementDrainagePage() {
           {/* Final Jack */}
           <div className="mt-8 flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="/images/Jack w Wrench.svg" 
-              alt="" 
+            <img
+              src="/images/Jack w Wrench.svg"
+              alt=""
               className="h-20 w-auto opacity-80"
               aria-hidden="true"
             />

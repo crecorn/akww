@@ -8,6 +8,18 @@ export const waterproofingServicesData = [
     description: 'Interior & exterior solutions',
   },
   {
+    name: 'Basement Drainage',
+    href: '/waterproofing/basement-drainage',
+    iconName: 'ArrowDownToLine',
+    description: 'French drains & perimeter systems',
+  },
+  {
+    name: 'Crawl Space Encapsulation',
+    href: '/waterproofing/crawl-space-encapsulation',
+    iconName: 'PenTool',
+    description: 'Vapor barriers & drainage',
+  },
+  {
     name: 'Foundation Crack Repair',
     href: '/waterproofing/foundation-crack-repair',
     iconName: 'Shield',
@@ -18,12 +30,6 @@ export const waterproofingServicesData = [
     href: '/waterproofing/sump-pump-services',
     iconName: 'Waves',
     description: 'Installation & repair',
-  },
-  {
-    name: 'Crawl Space Encapsulation',
-    href: '/waterproofing/crawl-space-encapsulation',
-    iconName: 'PenTool',
-    description: 'Vapor barriers & drainage',
   },
   {
     name: 'French Drains',

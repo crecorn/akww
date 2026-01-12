@@ -23,7 +23,7 @@ const URGENCY_LEVELS = [
   { value: 'planning', label: 'Planning - Gathering estimates' },
 ]
 
-export default function RestoreContactPage() {
+export default function RestorationContactPage() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -48,10 +48,10 @@ export default function RestoreContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          serviceType: `Restore: ${formData.serviceType}`,
+          serviceType: `Restoration: ${formData.serviceType}`,
           message: `Service: ${formData.serviceType}\nUrgency: ${formData.urgency}\nStanding Water: ${formData.hasStandingWater}\nAddress: ${formData.address}\n\n${formData.message}`,
-          source: 'Restore Contact Form',
-          sourcePage: '/restore/contact',
+          source: 'Restoration Contact Form',
+          sourcePage: '/restoration/contact',
         }),
       })
 
@@ -73,7 +73,7 @@ export default function RestoreContactPage() {
       <header>
         <div className="flex items-center gap-2 text-[var(--color-primary)] mb-2">
           <Droplets className="w-5 h-5" />
-          <span className="font-medium">Restore Services</span>
+          <span className="font-medium">Restoration Services</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
           Request Service or Free Estimate

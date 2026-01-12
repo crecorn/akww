@@ -84,12 +84,12 @@ export default function WaterDamageRestorationPage() {
         <div className="relative">
           {/* Breadcrumb */}
           <nav className="mb-6">
-            <Link 
-              href="/restore" 
+            <Link
+              href="/restoration"
               className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Restore Services
+              Back to Restoration Services
             </Link>
           </nav>
 

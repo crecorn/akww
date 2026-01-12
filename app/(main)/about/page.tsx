@@ -30,7 +30,7 @@ const services = [
   { icon: Wrench, name: 'Plumbing', href: '/plumbing-services' },
   { icon: Droplets, name: 'Sewer & Drain', href: '/sewer-drain' },
   { icon: Users, name: 'Commercial', href: '/commercial' },
-  { icon: Shield, name: 'Restoration', href: '/restore' },
+  { icon: Shield, name: 'Restoration', href: '/restoration' },
 ]
 
 const companyLinks = [

@@ -2,33 +2,33 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { 
-  Droplets, Waves, Shield, ArrowDownToLine, Home, BookOpen, Phone, Sparkles,
+import {
+  Droplets, Waves, BookOpen, Phone, Sparkles,
   type LucideIcon
 } from 'lucide-react'
-import { restoreServicesData, restoreSectionLinksData } from '@/lib/constants/restore'
+import { restorationServicesData, restorationSectionLinksData } from '@/lib/constants/restoration'
 import { useBooking } from '@/components/providers/booking-provider'
 import { cn } from '@/lib/utils/cn'
 
 const iconMap: Record<string, LucideIcon> = {
-  Droplets, Waves, Shield, ArrowDownToLine, Home, BookOpen, Phone, Sparkles,
+  Droplets, Waves, BookOpen, Phone, Sparkles,
 }
 
 interface SectionNavProps {
   variant?: 'sidebar' | 'horizontal'
 }
 
-export function RestoreSectionNav({ variant = 'sidebar' }: SectionNavProps) {
+export function RestorationSectionNav({ variant = 'sidebar' }: SectionNavProps) {
   const pathname = usePathname()
   const { openBookingModal } = useBooking()
 
-  const services = restoreServicesData.map(service => ({
+  const services = restorationServicesData.map(service => ({
     ...service,
-    href: `/restore/${service.slug}`,
+    href: `/restoration/${service.slug}`,
     Icon: iconMap[service.iconName] || Droplets,
   }))
 
-  const sectionLinks = restoreSectionLinksData.map(link => ({
+  const sectionLinks = restorationSectionLinksData.map(link => ({
     ...link,
     Icon: iconMap[link.iconName] || BookOpen,
   }))
@@ -39,10 +39,10 @@ export function RestoreSectionNav({ variant = 'sidebar' }: SectionNavProps) {
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-2 py-3 overflow-x-auto scrollbar-hide">
             <Link
-              href="/restore"
+              href="/restoration"
               className={cn(
                 'px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors',
-                pathname === '/restore'
+                pathname === '/restoration'
                   ? 'bg-[var(--color-primary)] text-white'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               )}
@@ -73,16 +73,16 @@ export function RestoreSectionNav({ variant = 'sidebar' }: SectionNavProps) {
     <aside className="hidden lg:block w-72 flex-shrink-0">
       <div className="sticky top-28 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
         <div className="p-4 bg-[var(--color-primary)] text-white">
-          <h2 className="font-bold text-lg">Restore Services</h2>
-          <p className="text-sm text-blue-100 mt-1">Water damage & waterproofing</p>
+          <h2 className="font-bold text-lg">Restoration Services</h2>
+          <p className="text-sm text-blue-100 mt-1">Water damage recovery</p>
         </div>
 
         <nav className="p-2">
           <Link
-            href="/restore"
+            href="/restoration"
             className={cn(
               'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
-              pathname === '/restore'
+              pathname === '/restoration'
                 ? 'bg-[var(--color-primary)]/10 text-[var(--color-primary)]'
                 : 'text-slate-600 hover:bg-slate-50'
             )}

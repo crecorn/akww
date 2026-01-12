@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git mv:*)",
+      "Bash(robocopy:*)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}
