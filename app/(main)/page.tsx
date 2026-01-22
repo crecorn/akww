@@ -3,16 +3,15 @@ import Link from 'next/link'
 import { siteConfig } from '@/lib/constants/site'
 import { LocalBusinessSchema } from '@/components/seo/json-ld'
 import { HeroCTA } from '@/components/ui/hero-cta'
-import { 
-  Phone, 
-  Droplets, 
-  Wrench, 
-  Shield, 
-  Clock, 
-  Star, 
-  CheckCircle2, 
+import { WaterSolutionsCards } from '@/components/ui/water-solutions-cards'
+import {
+  Phone,
+  Droplets,
+  Shield,
+  Clock,
+  Star,
+  CheckCircle2,
   ArrowRight,
-  Building2,
   AlertTriangle
 } from 'lucide-react'
 
@@ -23,37 +22,6 @@ export const metadata: Metadata = {
     canonical: siteConfig.url,
   },
 }
-
-const services = [
-  {
-    icon: Wrench,
-    title: 'Plumbing Services',
-    description: 'Expert repairs, installations, and maintenance for all your plumbing needs. Water heaters, pipes, fixtures & more.',
-    href: '/plumbing-services',
-    color: 'bg-blue-500',
-  },
-  {
-    icon: Droplets,
-    title: 'Basement Waterproofing',
-    description: 'Keep your basement dry with professional waterproofing solutions. Foundation repair, sump pumps & drainage systems.',
-    href: '/waterproofing',
-    color: 'bg-cyan-500',
-  },
-  {
-    icon: AlertTriangle,
-    title: 'Water Damage Restoration',
-    description: 'Fast response to water emergencies. Professional cleanup, drying, and restoration to protect your property.',
-    href: '/water-damage',
-    color: 'bg-amber-500',
-  },
-  {
-    icon: Building2,
-    title: 'Commercial Plumbing',
-    description: 'Comprehensive plumbing solutions for businesses, restaurants, and property managers throughout the region.',
-    href: '/commercial-plumbing',
-    color: 'bg-emerald-500',
-  },
-]
 
 const trustBadges = [
   { label: 'BBB A+', sublabel: 'Accredited', icon: Shield },
@@ -140,29 +108,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service) => (
-              <Link
-                key={service.href}
-                href={service.href}
-                className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-slate-100"
-              >
-                <div className={`w-14 h-14 ${service.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <service.icon className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[var(--color-primary)] transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-slate-600 mb-4">
-                  {service.description}
-                </p>
-                <span className="inline-flex items-center gap-1 text-[var(--color-primary)] font-semibold">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-            ))}
-          </div>
+          <WaterSolutionsCards />
         </div>
       </section>
 
