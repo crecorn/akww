@@ -19,7 +19,7 @@ export function VanSection() {
       <div className="container mx-auto px-4">
         <div className="flex justify-center">
           <img
-            src="/images/AK-Water-Works-Van.webp"
+            src="/images/AK Water Works Plumbing Service.webp"
             alt="AK Water Works Service Van"
             className="h-[180px] md:h-[220px] w-auto object-contain -mt-8"
           />
