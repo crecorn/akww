@@ -260,6 +260,12 @@ const nextConfig: NextConfig = {
       // ============================================
       // RESTORATION → EMERGENCIES REDIRECTS
       // ============================================
+      // Renamed water-extraction to water-pump-out
+      {
+        source: '/emergencies/water-extraction',
+        destination: '/emergencies/water-pump-out',
+        permanent: true,
+      },
       {
         source: '/restoration',
         destination: '/emergencies',
@@ -277,7 +283,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/restoration/water-extraction',
-        destination: '/emergencies/water-extraction',
+        destination: '/emergencies/water-pump-out',
         permanent: true,
       },
       {
@@ -308,7 +314,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/restore/water-extraction',
-        destination: '/emergencies/water-extraction',
+        destination: '/emergencies/water-pump-out',
         permanent: true,
       },
       {
@@ -373,7 +379,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/services/water-damage/emergency-water-clean-up-services',
-        destination: '/emergencies/water-extraction',
+        destination: '/emergencies/water-pump-out',
         permanent: true,
       },
       {

@@ -1,18 +1,18 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Script from 'next/script'
 import { siteConfig } from '@/lib/constants/site'
 import { LocalBusinessSchema } from '@/components/seo/json-ld'
 import { HeroCTA } from '@/components/ui/hero-cta'
-import { 
-  Phone, 
-  Droplets, 
-  Wrench, 
-  Shield, 
-  Clock, 
-  Star, 
-  CheckCircle2, 
+import { ServiceCategoriesGrid } from '@/components/ui/service-categories-grid'
+import {
+  Phone,
+  Droplets,
+  Shield,
+  Clock,
+  Star,
+  CheckCircle2,
   ArrowRight,
-  Building2,
   AlertTriangle
 } from 'lucide-react'
 
@@ -23,37 +23,6 @@ export const metadata: Metadata = {
     canonical: siteConfig.url,
   },
 }
-
-const services = [
-  {
-    icon: Wrench,
-    title: 'Plumbing Services',
-    description: 'Expert repairs, installations, and maintenance for all your plumbing needs. Water heaters, pipes, fixtures & more.',
-    href: '/plumbing-services',
-    color: 'bg-blue-500',
-  },
-  {
-    icon: Droplets,
-    title: 'Basement Waterproofing',
-    description: 'Keep your basement dry with professional waterproofing solutions. Foundation repair, sump pumps & drainage systems.',
-    href: '/waterproofing',
-    color: 'bg-cyan-500',
-  },
-  {
-    icon: AlertTriangle,
-    title: 'Emergency Services',
-    description: 'Fast response to water emergencies. Professional cleanup, drying, and recovery to protect your property.',
-    href: '/emergencies',
-    color: 'bg-amber-500',
-  },
-  {
-    icon: Building2,
-    title: 'Commercial Plumbing',
-    description: 'Comprehensive plumbing solutions for businesses, restaurants, and property managers throughout the region.',
-    href: '/commercial',
-    color: 'bg-emerald-500',
-  },
-]
 
 const trustBadges = [
   { label: 'BBB A+', sublabel: 'Accredited', icon: Shield },
@@ -73,6 +42,10 @@ export default function HomePage() {
   return (
     <>
       <LocalBusinessSchema />
+      <Script
+        src="https://app.akwaterworks.net/reputation/assets/review-widget.js"
+        strategy="lazyOnload"
+      />
 
       {/* Hero Section */}
       <section className="relative text-white overflow-hidden">
@@ -129,62 +102,27 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Comprehensive Water Solutions
-            </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              From emergency repairs to preventive maintenance, we handle all your plumbing and waterproofing needs.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service) => (
-              <Link
-                key={service.href}
-                href={service.href}
-                className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-slate-100"
-              >
-                <div className={`w-14 h-14 ${service.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <service.icon className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[var(--color-primary)] transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-slate-600 mb-4">
-                  {service.description}
-                </p>
-                <span className="inline-flex items-center gap-1 text-[var(--color-primary)] font-semibold">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceCategoriesGrid />
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#1D283B]">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-start gap-4 md:gap-6 mb-8">
                 {/* Jack Waving - responsive sizing */}
-                <img 
-                  src="/images/Jack Waving.svg" 
-                  alt="" 
+                <img
+                  src="/images/Jack Waving.svg"
+                  alt=""
                   className="h-24 md:h-32 lg:h-48 w-auto flex-shrink-0 -mt-2"
                   aria-hidden="true"
                 />
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                     Why Northeast Ohio Trusts AK Water Works
                   </h2>
-                  <p className="text-lg text-slate-600">
-                    When water problems strike, you need a team that responds fast, works professionally, 
+                  <p className="text-lg text-slate-300">
+                    When water problems strike, you need a team that responds fast, works professionally,
                     and stands behind their work. That's been our commitment since day one.
                   </p>
                 </div>
@@ -198,12 +136,12 @@ export default function HomePage() {
                   { title: 'Local Experts', desc: 'We know Northeast Ohio homes and their unique challenges' },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
-                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1">
-                      <CheckCircle2 className="w-4 h-4 text-green-600" />
+                    <div className="w-6 h-6 rounded-full bg-[var(--color-accent)] flex items-center justify-center flex-shrink-0 mt-1">
+                      <CheckCircle2 className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-slate-900">{item.title}</h3>
-                      <p className="text-slate-600">{item.desc}</p>
+                      <h3 className="font-bold text-white">{item.title}</h3>
+                      <p className="text-slate-300">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -212,7 +150,7 @@ export default function HomePage() {
               <div className="mt-8">
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 text-[var(--color-primary)] font-semibold hover:underline"
+                  className="inline-flex items-center gap-2 text-[var(--color-accent)] font-semibold hover:underline"
                 >
                   Learn more about our team
                   <ArrowRight className="w-4 h-4" />
@@ -220,38 +158,53 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="bg-slate-100 rounded-2xl p-8 lg:p-12">
-              <div className="text-center">
-                <div className="text-6xl font-bold text-[var(--color-primary)] mb-2">
-                  {siteConfig.reviews.rating}
-                </div>
-                <div className="flex justify-center gap-1 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-slate-600 mb-6">
-                  Based on {siteConfig.reviews.count}+ verified reviews
-                </p>
-
-                <blockquote className="text-lg text-slate-700 italic mb-4">
-                  "AK Water Works was amazing! They came out same day and fixed our burst pipe quickly. 
-                  Professional, friendly, and fairly priced. Highly recommend!"
-                </blockquote>
-                <p className="font-semibold text-slate-900">— John D., Warren, OH</p>
-
-                <Link
-                  href="/reviews"
-                  className="inline-flex items-center gap-2 mt-6 text-[var(--color-primary)] font-semibold hover:underline"
-                >
-                  Read more reviews
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+            <div className="rounded-2xl overflow-hidden">
+              <iframe
+                className="lc_reviews_widget"
+                src="https://app.akwaterworks.net/reputation/widgets/review_widget/rEZCKfcVxZKDCOzh8Vn9?widgetId=6974f97ddd279f45cdf53f6a"
+                frameBorder="0"
+                scrolling="no"
+                style={{ minWidth: '100%', width: '100%', minHeight: '400px' }}
+              />
             </div>
           </div>
         </div>
       </section>
+
+      {/* Emergency CTA */}
+      <section className="py-16 bg-[var(--color-accent)]">
+        <div className="container mx-auto px-4 text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <AlertTriangle className="w-8 h-8 text-white" />
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Plumbing Emergency?
+            </h2>
+          </div>
+          <p className="text-xl text-green-100 mb-6">
+            Don't wait! Our team is available 24/7 to help.
+          </p>
+          <a
+            href={`tel:${siteConfig.phoneRaw}`}
+            className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white hover:bg-slate-100 text-[var(--color-accent)] font-bold text-xl rounded-xl transition-colors shadow-xl"
+            data-cta="emergency-phone"
+          >
+            <Phone className="w-6 h-6" />
+            Call Now: {siteConfig.phone}
+          </a>
+        </div>
+      </section>
+
+      {/* Jack Mascot Accent - straddling sections */}
+      <div className="relative z-10">
+        <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <img
+            src="/images/Jack Running.svg"
+            alt=""
+            className="h-[115px] w-auto drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
 
       {/* Service Areas */}
       <section className="py-20 bg-slate-900 text-white">
@@ -286,41 +239,6 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Jack Mascot Accent - straddling sections */}
-      <div className="relative z-10">
-        <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <img 
-            src="/images/Jack Running.svg" 
-            alt="" 
-            className="h-[115px] w-auto drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]"
-            aria-hidden="true"
-          />
-        </div>
-      </div>
-
-      {/* Emergency CTA */}
-      <section className="py-16 bg-[var(--color-accent)]">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <AlertTriangle className="w-8 h-8 text-white" />
-            <h2 className="text-2xl md:text-3xl font-bold text-white">
-              Plumbing Emergency?
-            </h2>
-          </div>
-          <p className="text-xl text-green-100 mb-6">
-            Don't wait! Our team is available 24/7 to help.
-          </p>
-          <a
-            href={`tel:${siteConfig.phoneRaw}`}
-            className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white hover:bg-slate-100 text-[var(--color-accent)] font-bold text-xl rounded-xl transition-colors shadow-xl"
-            data-cta="emergency-phone"
-          >
-            <Phone className="w-6 h-6" />
-            Call Now: {siteConfig.phone}
-          </a>
         </div>
       </section>
 

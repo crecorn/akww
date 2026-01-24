@@ -1,15 +1,15 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { 
-  Building2, Landmark, Factory, Siren,
+import {
+  Building2, Landmark, Factory, Siren, UtensilsCrossed, Wrench,
   CheckCircle2, Phone, ArrowRight, ArrowLeft
 } from 'lucide-react'
 import { commercialServicesData } from '@/lib/constants/commercial'
 import { siteConfig } from '@/lib/constants/site'
 
 const iconMap: Record<string, typeof Building2> = {
-  Building2, Landmark, Factory, Siren,
+  Building2, Landmark, Factory, Siren, UtensilsCrossed, Wrench,
 }
 
 interface Props {

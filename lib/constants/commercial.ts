@@ -85,6 +85,48 @@ export const commercialServicesData = [
       'Insurance documentation',
     ],
   },
+  {
+    slug: 'restaurant-plumbing',
+    title: 'Restaurant Plumbing',
+    shortDescription: 'Specialized plumbing for restaurants and food service.',
+    description: 'Restaurants have unique plumbing demands from grease traps to high-volume drains. Our restaurant plumbing specialists understand health code requirements and work around your schedule to minimize business disruption.',
+    iconName: 'UtensilsCrossed',
+    features: [
+      'Grease trap installation & cleaning',
+      'Commercial kitchen plumbing',
+      'Floor drain maintenance',
+      'Dishwasher hookups',
+      'Bar sink installations',
+      'Health code compliance',
+    ],
+    benefits: [
+      'Food service specialists',
+      'Flexible scheduling',
+      'Health department compliant',
+      'Fast response times',
+    ],
+  },
+  {
+    slug: 'plumbing-maintenance',
+    title: 'Plumbing Maintenance',
+    shortDescription: 'Preventive maintenance programs for commercial properties.',
+    description: 'Prevent costly emergency repairs with our commercial plumbing maintenance programs. Regular inspections, drain cleaning, and preventive repairs keep your business running smoothly and avoid unexpected downtime.',
+    iconName: 'Wrench',
+    features: [
+      'Scheduled inspections',
+      'Preventive drain cleaning',
+      'Water heater maintenance',
+      'Fixture inspections',
+      'Leak detection',
+      'Priority emergency service',
+    ],
+    benefits: [
+      'Reduce emergency calls',
+      'Extend equipment life',
+      'Budget predictability',
+      'Priority scheduling',
+    ],
+  },
 ] as const
 
 export const commercialSectionLinksData = [
