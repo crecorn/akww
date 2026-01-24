@@ -6,7 +6,7 @@ import {
   Droplets, Waves, BookOpen, Phone, Sparkles,
   type LucideIcon
 } from 'lucide-react'
-import { restorationServicesData, restorationSectionLinksData } from '@/lib/constants/restoration'
+import { emergencyServicesData, emergencySectionLinksData } from '@/lib/constants/restoration'
 import { useBooking } from '@/components/providers/booking-provider'
 import { cn } from '@/lib/utils/cn'
 
@@ -18,17 +18,20 @@ interface SectionNavProps {
   variant?: 'sidebar' | 'horizontal'
 }
 
-export function RestorationSectionNav({ variant = 'sidebar' }: SectionNavProps) {
+// Legacy alias for backwards compatibility
+export const RestorationSectionNav = EmergencySectionNav
+
+export function EmergencySectionNav({ variant = 'sidebar' }: SectionNavProps) {
   const pathname = usePathname()
   const { openBookingModal } = useBooking()
 
-  const services = restorationServicesData.map(service => ({
+  const services = emergencyServicesData.map(service => ({
     ...service,
-    href: `/restoration/${service.slug}`,
-    Icon: iconMap[service.iconName] || Droplets,
+    href: `/emergencies/${service.slug}`,
+    Icon: iconMap[service.iconName] || Waves,
   }))
 
-  const sectionLinks = restorationSectionLinksData.map(link => ({
+  const sectionLinks = emergencySectionLinksData.map(link => ({
     ...link,
     Icon: iconMap[link.iconName] || BookOpen,
   }))
@@ -39,10 +42,10 @@ export function RestorationSectionNav({ variant = 'sidebar' }: SectionNavProps) 
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-2 py-3 overflow-x-auto scrollbar-hide">
             <Link
-              href="/restoration"
+              href="/emergencies"
               className={cn(
                 'px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors',
-                pathname === '/restoration'
+                pathname === '/emergencies'
                   ? 'bg-[var(--color-primary)] text-white'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               )}
@@ -73,16 +76,16 @@ export function RestorationSectionNav({ variant = 'sidebar' }: SectionNavProps) 
     <aside className="hidden lg:block w-72 flex-shrink-0">
       <div className="sticky top-28 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
         <div className="p-4 bg-[var(--color-primary)] text-white">
-          <h2 className="font-bold text-lg">Restoration Services</h2>
+          <h2 className="font-bold text-lg">Emergency Services</h2>
           <p className="text-sm text-blue-100 mt-1">Water damage recovery</p>
         </div>
 
         <nav className="p-2">
           <Link
-            href="/restoration"
+            href="/emergencies"
             className={cn(
               'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
-              pathname === '/restoration'
+              pathname === '/emergencies'
                 ? 'bg-[var(--color-primary)]/10 text-[var(--color-primary)]'
                 : 'text-slate-600 hover:bg-slate-50'
             )}

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { 
+import {
   Phone, CheckCircle2, ArrowRight, ArrowLeft, Clock, Shield, Star,
   Waves, Droplets, Home, Truck, AlertTriangle
 } from 'lucide-react'
@@ -34,21 +34,21 @@ const signs = [
 ]
 
 const faqs = [
-  { 
-    q: 'How fast can you start extraction?', 
-    a: 'We arrive within 60 minutes for emergencies and begin extraction immediately. Our trucks are always ready to roll.' 
+  {
+    q: 'How fast can you start extraction?',
+    a: 'We arrive within 60 minutes for emergencies and begin extraction immediately. Our trucks are always ready to roll.'
   },
-  { 
-    q: 'How much water can you remove?', 
-    a: 'Our truck-mounted systems can extract hundreds of gallons per minute. We handle everything from small leaks to major flooding.' 
+  {
+    q: 'How much water can you remove?',
+    a: 'Our truck-mounted systems can extract hundreds of gallons per minute. We handle everything from small leaks to major flooding.'
   },
-  { 
-    q: 'Can you save my carpet?', 
-    a: 'Often yes! Quick extraction is key. We can extract water from carpet and padding, then use drying equipment to save your flooring.' 
+  {
+    q: 'Can you save my carpet?',
+    a: 'Often yes! Quick extraction is key. We can extract water from carpet and padding, then use drying equipment to save your flooring.'
   },
-  { 
-    q: 'What happens after extraction?', 
-    a: 'We set up industrial drying equipment to remove remaining moisture from structures. This prevents mold and further damage.' 
+  {
+    q: 'What happens after extraction?',
+    a: 'We set up industrial drying equipment to remove remaining moisture from structures. This prevents mold and further damage.'
   },
 ]
 
@@ -85,11 +85,11 @@ export default function WaterExtractionPage() {
           {/* Breadcrumb */}
           <nav className="mb-6">
             <Link
-              href="/restoration"
+              href="/emergencies"
               className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Restoration Services
+              Back to Emergency Services
             </Link>
           </nav>
 
@@ -107,7 +107,7 @@ export default function WaterExtractionPage() {
 
           {/* Subheading */}
           <p className="text-xl text-slate-300 mb-8 max-w-2xl">
-            Standing water causes damage every minute. Our powerful extraction equipment 
+            Standing water causes damage every minute. Our powerful extraction equipment
             removes water fast to minimize damage and start the drying process.
           </p>
 
@@ -149,9 +149,9 @@ export default function WaterExtractionPage() {
         {/* Jack Mascot */}
         <div className="hidden lg:block absolute bottom-4 right-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/images/Jack w Wrench.svg" 
-            alt="" 
+          <img
+            src="/images/Jack w Wrench.svg"
+            alt=""
             className="h-36 w-auto opacity-90"
             aria-hidden="true"
           />
@@ -167,7 +167,7 @@ export default function WaterExtractionPage() {
           {services.map((service) => {
             const Icon = service.icon
             return (
-              <div 
+              <div
                 key={service.title}
                 className="bg-white rounded-xl p-5 shadow-sm border border-slate-200 flex items-start gap-4"
               >
@@ -191,7 +191,7 @@ export default function WaterExtractionPage() {
         </h2>
         <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-4 md:overflow-visible md:pb-0">
           {[1, 2, 3, 4].map((num) => (
-            <div 
+            <div
               key={num}
               className="flex-shrink-0 w-[180px] md:w-auto snap-center"
             >
@@ -286,15 +286,15 @@ export default function WaterExtractionPage() {
         {/* Jack Callout */}
         <div className="mt-8 flex items-center gap-4 bg-slate-800 rounded-xl p-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/images/Jack w Wrench.svg" 
-            alt="" 
+          <img
+            src="/images/Jack w Wrench.svg"
+            alt=""
             className="h-16 w-auto"
             aria-hidden="true"
           />
           <div className="flex-1">
             <p className="text-slate-300">
-              <strong className="text-white">Jack says:</strong> &quot;The faster we get the 
+              <strong className="text-white">Jack says:</strong> &quot;The faster we get the
               water out, the more we can save. Don&apos;t wait—call now!&quot;
             </p>
           </div>
@@ -314,8 +314,8 @@ export default function WaterExtractionPage() {
         </h2>
         <div className="space-y-4">
           {faqs.map((faq) => (
-            <div 
-              key={faq.q} 
+            <div
+              key={faq.q}
               className="bg-white rounded-xl p-5 shadow-sm border border-slate-200"
             >
               <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
@@ -335,7 +335,7 @@ export default function WaterExtractionPage() {
           </div>
           <div className="flex-1 text-white">
             <blockquote className="text-lg italic mb-2">
-              &quot;Water heater flooded our basement with 4 inches of water. They arrived in 
+              &quot;Water heater flooded our basement with 4 inches of water. They arrived in
               under an hour and had all the water out in no time. Saved our finished basement!&quot;
             </blockquote>
             <p className="font-semibold">— Brian & Lisa T., Niles, OH</p>
@@ -350,7 +350,7 @@ export default function WaterExtractionPage() {
             Get the Water Out Now
           </h2>
           <p className="text-xl text-slate-300 mb-8 max-w-xl mx-auto">
-            Standing water causes more damage every minute. 
+            Standing water causes more damage every minute.
             Call now for emergency water pump out.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -373,9 +373,9 @@ export default function WaterExtractionPage() {
           {/* Final Jack */}
           <div className="mt-8 flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="/images/Jack w Wrench.svg" 
-              alt="" 
+            <img
+              src="/images/Jack w Wrench.svg"
+              alt=""
               className="h-20 w-auto opacity-80"
               aria-hidden="true"
             />

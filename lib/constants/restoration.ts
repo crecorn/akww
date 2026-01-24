@@ -1,25 +1,25 @@
-// Restoration services data (water damage services only)
+// Emergency services data (water damage cleanup & mitigation)
 
-export const restorationServicesData = [
+export const emergencyServicesData = [
   {
-    slug: 'water-damage-restoration',
-    title: 'Water Damage Restoration',
+    slug: 'water-damage',
+    title: 'Water Damage Recovery',
     shortDescription: 'Complete water damage recovery services.',
-    description: 'When water damage strikes, time is critical. Our water damage restoration team responds quickly to assess, mitigate, and restore your property. We work with insurance companies and handle everything from initial extraction to final repairs.',
-    iconName: 'Droplets',
+    description: 'When water damage strikes, time is critical. Our emergency response team acts quickly to assess, mitigate, and recover your property. We work with insurance companies and handle everything from initial extraction to final repairs.',
+    iconName: 'Waves',
     features: [
       'Emergency response 24/7',
       'Water damage assessment',
       'Structural drying',
       'Mold prevention treatment',
-      'Content restoration',
+      'Content recovery',
       'Insurance claim assistance',
     ],
     benefits: [
       'Fast emergency response',
       'IICRC certified technicians',
       'Direct insurance billing',
-      'Complete restoration services',
+      'Complete recovery services',
     ],
   },
   {
@@ -27,7 +27,7 @@ export const restorationServicesData = [
     title: 'Water Pump Out & Clean Up',
     shortDescription: 'Emergency water removal services.',
     description: 'Standing water causes damage every minute it remains. Our water pump out and clean up service uses powerful pumps and vacuums to remove water quickly from your home or business. We respond 24/7 to minimize damage and begin the drying process immediately.',
-    iconName: 'Waves',
+    iconName: 'Droplets',
     features: [
       'Rapid water removal',
       'Truck-mounted extraction',
@@ -45,17 +45,22 @@ export const restorationServicesData = [
   },
 ] as const
 
-export const restorationSectionLinksData = [
+export const emergencySectionLinksData = [
   {
     name: 'Resources',
-    href: '/restoration/resources',
+    href: '/emergencies/resources',
     iconName: 'BookOpen',
   },
   {
     name: 'Contact Us',
-    href: '/restoration/contact',
+    href: '/emergencies/contact',
     iconName: 'Phone',
   },
 ] as const
 
-export type RestorationService = typeof restorationServicesData[number]
+// Legacy exports for backwards compatibility during migration
+export const restorationServicesData = emergencyServicesData
+export const restorationSectionLinksData = emergencySectionLinksData
+
+export type EmergencyService = typeof emergencyServicesData[number]
+export type RestorationService = EmergencyService

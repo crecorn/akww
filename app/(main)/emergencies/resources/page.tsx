@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Droplets, BookOpen, FileText, CheckCircle2, ArrowRight, Phone, AlertTriangle } from 'lucide-react'
+import { Waves, BookOpen, FileText, CheckCircle2, ArrowRight, Phone, AlertTriangle } from 'lucide-react'
 import { siteConfig } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
   title: 'Water Damage & Waterproofing Resources | AK Water Works',
-  description: 'Helpful guides, tips, and information about water damage restoration, basement waterproofing, and moisture control.',
+  description: 'Helpful guides, tips, and information about water damage recovery, basement waterproofing, and moisture control.',
 }
 
 const guides = [
@@ -60,17 +60,17 @@ const faqs = [
   },
   {
     q: 'Do you offer financing?',
-    a: 'Yes, we offer flexible financing options for waterproofing and restoration projects.',
+    a: 'Yes, we offer flexible financing options for waterproofing and recovery projects.',
   },
 ]
 
-export default function RestorationResourcesPage() {
+export default function EmergencyResourcesPage() {
   return (
     <div className="space-y-12">
       <header>
         <div className="flex items-center gap-2 text-[var(--color-primary)] mb-2">
-          <Droplets className="w-5 h-5" />
-          <span className="font-medium">Restoration Services</span>
+          <Waves className="w-5 h-5" />
+          <span className="font-medium">Emergency Services</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
           Water Damage & Waterproofing Resources
@@ -153,7 +153,7 @@ export default function RestorationResourcesPage() {
             {siteConfig.phone}
           </a>
           <Link
-            href="/restoration/contact"
+            href="/emergencies/contact"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[var(--color-accent)] text-white font-bold rounded-lg hover:bg-[var(--color-accent-dark)] transition-colors"
           >
             Schedule Free Estimate <ArrowRight className="w-5 h-5" />

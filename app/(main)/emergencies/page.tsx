@@ -4,12 +4,12 @@ import {
   Droplets, Waves,
   ArrowRight, Phone, Clock, Award, AlertTriangle, Star, Users, Shield
 } from 'lucide-react'
-import { restorationServicesData } from '@/lib/constants/restoration'
+import { emergencyServicesData } from '@/lib/constants/restoration'
 import { siteConfig } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
-  title: 'Water Damage Restoration Services | AK Water Works',
-  description: 'Professional water damage restoration and emergency water removal services in Northeast Ohio. 24/7 emergency response. IICRC certified. Free estimates.',
+  title: 'Emergency Water Damage Services | 24/7 Response | AK Water Works',
+  description: 'Professional emergency water damage cleanup and recovery services in Northeast Ohio. 24/7 emergency response. IICRC certified. Free estimates.',
 }
 
 const iconMap: Record<string, typeof Droplets> = {
@@ -27,17 +27,17 @@ const processSteps = [
   { step: '1', title: 'Emergency Contact', desc: 'Call 24/7 for immediate response' },
   { step: '2', title: 'Assessment', desc: 'We inspect and document damage' },
   { step: '3', title: 'Mitigation', desc: 'Stop damage and begin drying' },
-  { step: '4', title: 'Restoration', desc: 'Complete repairs and cleanup' },
+  { step: '4', title: 'Recovery', desc: 'Complete repairs and cleanup' },
 ]
 
 const whyChooseUs = [
   { icon: Clock, title: '24/7 Emergency Response', desc: 'Water damage doesn\'t wait. Neither do we.' },
-  { icon: Award, title: 'IICRC Certified', desc: 'Industry-certified restoration technicians.' },
+  { icon: Award, title: 'IICRC Certified', desc: 'Industry-certified cleanup technicians.' },
   { icon: Shield, title: 'Insurance Assistance', desc: 'We work with your insurance company.' },
   { icon: Users, title: 'Experienced Team', desc: 'Skilled technicians with years of experience.' },
 ]
 
-export default function RestorationPage() {
+export default function EmergenciesPage() {
   return (
     <>
       {/* Full-Width Hero */}
@@ -55,20 +55,20 @@ export default function RestorationPage() {
           <div className="max-w-3xl">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-              <Droplets className="w-4 h-4" />
-              <span className="text-sm font-medium tracking-wide uppercase">Restoration Services</span>
+              <Waves className="w-4 h-4" />
+              <span className="text-sm font-medium tracking-wide uppercase">Emergency Services</span>
             </div>
 
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Water Damage
-              <span className="block text-[var(--color-accent)]">Restoration Experts</span>
+              <span className="block text-[var(--color-accent)]">Emergency Response</span>
             </h1>
 
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
-              When water damage strikes, every minute counts. Our certified restoration
-              team responds 24/7 to extract water, dry your property, and restore
+              When water damage strikes, every minute counts. Our certified emergency
+              team responds 24/7 to extract water, dry your property, and recover
               your home to pre-loss condition.
             </p>
 
@@ -82,7 +82,7 @@ export default function RestorationPage() {
                 Emergency: {siteConfig.phone}
               </a>
               <Link
-                href="/restoration/contact"
+                href="/emergencies/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold text-lg rounded-lg transition-colors border border-white/20"
               >
                 Free Estimate
@@ -133,21 +133,21 @@ export default function RestorationPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Our Restoration Services
+              Our Emergency Services
             </h2>
             <p className="text-lg text-slate-600">
-              Complete water damage restoration services. From emergency water extraction
-              to full property restoration, we handle it all.
+              Complete water damage emergency services. From emergency water extraction
+              to full property recovery, we handle it all.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {restorationServicesData.map((service) => {
-              const Icon = iconMap[service.iconName] || Droplets
+            {emergencyServicesData.map((service) => {
+              const Icon = iconMap[service.iconName] || Waves
               return (
                 <Link
                   key={service.slug}
-                  href={`/restoration/${service.slug}`}
+                  href={`/emergencies/${service.slug}`}
                   className="group bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-xl hover:border-slate-300 transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
@@ -191,10 +191,10 @@ export default function RestorationPage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Our Restoration Process
+              Our Emergency Response Process
             </h2>
             <p className="text-lg text-slate-600">
-              We follow a proven process to restore your property quickly and thoroughly.
+              We follow a proven process to recover your property quickly and thoroughly.
             </p>
           </div>
 
@@ -224,7 +224,7 @@ export default function RestorationPage() {
               Why Choose AK Water Works
             </h2>
             <p className="text-lg text-slate-400">
-              We combine rapid response with professional restoration to get your life back to normal.
+              We combine rapid response with professional recovery to get your life back to normal.
             </p>
           </div>
 
@@ -264,7 +264,7 @@ export default function RestorationPage() {
               </div>
               <p className="text-green-100 mb-6">
                 Homeowners trust us when water damage strikes.
-                See why we&apos;re the top choice for water damage restoration.
+                See why we&apos;re the top choice for water damage recovery.
               </p>
               <Link
                 href="/reviews"
@@ -294,7 +294,7 @@ export default function RestorationPage() {
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Don&apos;t wait—water damage gets worse by the minute.
-            Call now for 24/7 emergency water damage restoration.
+            Call now for 24/7 emergency water damage recovery.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -305,7 +305,7 @@ export default function RestorationPage() {
               {siteConfig.phone}
             </a>
             <Link
-              href="/restoration/contact"
+              href="/emergencies/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-bold text-lg rounded-lg transition-colors"
             >
               Request Service

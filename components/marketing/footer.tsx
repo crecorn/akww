@@ -11,7 +11,7 @@ const footerLinks = {
     { name: 'Plumbing', href: '/plumbing-services' },
     { name: 'Sewer & Drain', href: '/sewer-drain' },
     { name: 'Commercial', href: '/commercial' },
-    { name: 'Restoration', href: '/restoration' },
+    { name: 'Emergencies', href: '/emergencies' },
     { name: 'Waterproofing', href: '/waterproofing' },
     { name: '24/7 Emergency', href: '/commercial/emergency' },
   ],
@@ -82,7 +82,7 @@ export function Footer() {
                 />
               </Link>
               <p className="text-slate-400 mb-6 max-w-sm">
-                Family-owned plumbing, waterproofing, and restoration company serving Northeast Ohio since 2020.
+                Family-owned plumbing, waterproofing, and emergency water damage company serving Northeast Ohio since 2020.
               </p>
 
               {/* Contact Info */}

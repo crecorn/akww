@@ -4,9 +4,9 @@ import {
   Droplets, Waves,
   CheckCircle2, Phone, AlertTriangle
 } from 'lucide-react'
-import { restorationServicesData } from '@/lib/constants/restoration'
+import { emergencyServicesData } from '@/lib/constants/restoration'
 import { siteConfig } from '@/lib/constants/site'
-import { RestorationCTA } from '@/components/restoration'
+import { EmergencyCTA } from '@/components/restoration'
 
 const iconMap: Record<string, typeof Droplets> = {
   Droplets, Waves,
@@ -17,13 +17,13 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return restorationServicesData.map((service) => ({
+  return emergencyServicesData.map((service) => ({
     slug: service.slug,
   }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const service = restorationServicesData.find(s => s.slug === params.slug)
+  const service = emergencyServicesData.find(s => s.slug === params.slug)
   if (!service) return { title: 'Service Not Found' }
 
   return {
@@ -32,14 +32,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function RestorationServicePage({ params }: Props) {
-  const service = restorationServicesData.find(s => s.slug === params.slug)
+export default function EmergencyServicePage({ params }: Props) {
+  const service = emergencyServicesData.find(s => s.slug === params.slug)
 
   if (!service) {
     notFound()
   }
 
-  const Icon = iconMap[service.iconName] || Droplets
+  const Icon = iconMap[service.iconName] || Waves
 
   return (
     <div className="space-y-8">
@@ -65,7 +65,7 @@ export default function RestorationServicePage({ params }: Props) {
       <header className="bg-gradient-to-br from-[var(--color-primary)] to-blue-800 rounded-2xl p-6 md:p-10 text-white">
         <div className="flex items-center gap-2 text-blue-200 mb-4">
           <Icon className="w-5 h-5" />
-          <span className="font-medium">Restoration Services</span>
+          <span className="font-medium">Emergency Services</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold mb-4">
           {service.title}
@@ -73,7 +73,7 @@ export default function RestorationServicePage({ params }: Props) {
         <p className="text-lg text-blue-100 mb-6 max-w-2xl">
           {service.description}
         </p>
-        <RestorationCTA variant="hero" service={service.title} />
+        <EmergencyCTA variant="hero" service={service.title} />
       </header>
 
       {/* Features */}
@@ -140,7 +140,7 @@ export default function RestorationServicePage({ params }: Props) {
         <p className="text-blue-100 mb-6">
           Our team is standing by 24/7 to respond to water emergencies.
         </p>
-        <RestorationCTA variant="emergency" service={service.title} />
+        <EmergencyCTA variant="emergency" service={service.title} />
       </section>
     </div>
   )

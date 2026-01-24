@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { 
+import {
   Phone, CheckCircle2, ArrowRight, ArrowLeft, Clock, Shield, Star,
   Droplets, Home, FileText, AlertTriangle
 } from 'lucide-react'
@@ -19,9 +19,9 @@ const benefits = [
   '24/7 emergency response',
   'IICRC certified technicians',
   'Direct insurance billing',
-  'Complete restoration services',
+  'Complete recovery services',
   'Mold prevention included',
-  'Content restoration available',
+  'Content recovery available',
 ]
 
 const signs = [
@@ -34,25 +34,25 @@ const signs = [
 ]
 
 const faqs = [
-  { 
-    q: 'How fast can you respond?', 
-    a: 'We respond to water damage emergencies within 60 minutes, 24 hours a day, 7 days a week. Time is critical with water damage.' 
+  {
+    q: 'How fast can you respond?',
+    a: 'We respond to water damage emergencies within 60 minutes, 24 hours a day, 7 days a week. Time is critical with water damage.'
   },
-  { 
-    q: 'Do you work with insurance?', 
-    a: 'Yes! We work directly with all major insurance companies and can bill them directly. We also help document the damage for your claim.' 
+  {
+    q: 'Do you work with insurance?',
+    a: 'Yes! We work directly with all major insurance companies and can bill them directly. We also help document the damage for your claim.'
   },
-  { 
-    q: 'How long does restoration take?', 
-    a: 'It depends on the extent of damage. Minor water damage may take 3-5 days. Major flooding can take 1-2 weeks or more for complete restoration.' 
+  {
+    q: 'How long does recovery take?',
+    a: 'It depends on the extent of damage. Minor water damage may take 3-5 days. Major flooding can take 1-2 weeks or more for complete recovery.'
   },
-  { 
-    q: 'Will you handle everything?', 
-    a: 'Yes, we provide complete restoration from water pump out through final repairs—flooring, drywall, painting, and more.' 
+  {
+    q: 'Will you handle everything?',
+    a: 'Yes, we provide complete recovery from water pump out through final repairs—flooring, drywall, painting, and more.'
   },
 ]
 
-export default function WaterDamageRestorationPage() {
+export default function WaterDamageRecoveryPage() {
   const { openBooking } = useBooking()
 
   return (
@@ -85,29 +85,29 @@ export default function WaterDamageRestorationPage() {
           {/* Breadcrumb */}
           <nav className="mb-6">
             <Link
-              href="/restoration"
+              href="/emergencies"
               className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Restoration Services
+              Back to Emergency Services
             </Link>
           </nav>
 
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
             <Droplets className="w-4 h-4 text-blue-400" />
-            <span className="text-sm font-medium">Water Damage Restoration</span>
+            <span className="text-sm font-medium">Water Damage Recovery</span>
           </div>
 
           {/* Heading */}
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Water Damage?
-            <span className="block text-[var(--color-accent)]">We Restore It All.</span>
+            <span className="block text-[var(--color-accent)]">We Recover It All.</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl text-slate-300 mb-8 max-w-2xl">
-            From emergency water pump out to complete restoration. 
+            From emergency water pump out to complete recovery.
             We handle everything—fast response, insurance coordination, and quality repairs.
           </p>
 
@@ -121,7 +121,7 @@ export default function WaterDamageRestorationPage() {
               Call {siteConfig.phone}
             </a>
             <button
-              onClick={() => openBooking('Water Damage Restoration')}
+              onClick={() => openBooking('Water Damage Recovery')}
               className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold text-lg rounded-lg transition-colors border border-white/20"
             >
               Request Service
@@ -149,9 +149,9 @@ export default function WaterDamageRestorationPage() {
         {/* Jack Mascot */}
         <div className="hidden lg:block absolute bottom-4 right-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/images/Jack w Wrench.svg" 
-            alt="" 
+          <img
+            src="/images/Jack w Wrench.svg"
+            alt=""
             className="h-36 w-auto opacity-90"
             aria-hidden="true"
           />
@@ -161,13 +161,13 @@ export default function WaterDamageRestorationPage() {
       {/* Services Grid */}
       <section className="bg-slate-50 rounded-2xl p-6 md:p-8">
         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-          Complete Restoration Services
+          Complete Recovery Services
         </h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {services.map((service) => {
             const Icon = service.icon
             return (
-              <div 
+              <div
                 key={service.title}
                 className="bg-white rounded-xl p-5 shadow-sm border border-slate-200 flex items-start gap-4"
               >
@@ -187,18 +187,18 @@ export default function WaterDamageRestorationPage() {
       {/* Gallery Section */}
       <section>
         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-          Our Restoration Work
+          Our Recovery Work
         </h2>
         <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-4 md:overflow-visible md:pb-0">
           {[1, 2, 3, 4].map((num) => (
-            <div 
+            <div
               key={num}
               className="flex-shrink-0 w-[180px] md:w-auto snap-center"
             >
               <div className="aspect-square bg-slate-200 rounded-xl overflow-hidden flex items-center justify-center border-2 border-dashed border-slate-300">
                 <div className="text-center text-slate-400 p-4">
                   <Droplets className="w-8 h-8 mx-auto mb-2 text-slate-300" />
-                  <span className="text-xs">Restoration {num}</span>
+                  <span className="text-xs">Recovery {num}</span>
                 </div>
               </div>
             </div>
@@ -264,14 +264,14 @@ export default function WaterDamageRestorationPage() {
       {/* Process Section with Jack */}
       <section className="bg-slate-900 text-white rounded-2xl p-6 md:p-8">
         <h2 className="text-2xl md:text-3xl font-bold mb-8">
-          Our Restoration Process
+          Our Recovery Process
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { step: '1', title: 'Emergency Call', desc: 'We respond in 60 min' },
             { step: '2', title: 'Extract Water', desc: 'Remove standing water' },
             { step: '3', title: 'Dry & Dehumidify', desc: 'Complete structural drying' },
-            { step: '4', title: 'Restore', desc: 'Repairs & rebuilding' },
+            { step: '4', title: 'Recover', desc: 'Repairs & rebuilding' },
           ].map((item) => (
             <div key={item.step} className="text-center">
               <div className="w-12 h-12 bg-[var(--color-accent)] text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-xl">
@@ -286,20 +286,20 @@ export default function WaterDamageRestorationPage() {
         {/* Jack Callout */}
         <div className="mt-8 flex items-center gap-4 bg-slate-800 rounded-xl p-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/images/Jack w Wrench.svg" 
-            alt="" 
+          <img
+            src="/images/Jack w Wrench.svg"
+            alt=""
             className="h-16 w-auto"
             aria-hidden="true"
           />
           <div className="flex-1">
             <p className="text-slate-300">
-              <strong className="text-white">Jack says:</strong> &quot;Don&apos;t wait on water damage! 
+              <strong className="text-white">Jack says:</strong> &quot;Don&apos;t wait on water damage!
               The longer you wait, the more damage—and mold risk—you face.&quot;
             </p>
           </div>
           <button
-            onClick={() => openBooking('Water Damage Restoration')}
+            onClick={() => openBooking('Water Damage Recovery')}
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-[var(--color-accent)] text-white font-semibold rounded-lg hover:bg-[var(--color-accent-dark)] transition-colors"
           >
             Get Help Now
@@ -314,8 +314,8 @@ export default function WaterDamageRestorationPage() {
         </h2>
         <div className="space-y-4">
           {faqs.map((faq) => (
-            <div 
-              key={faq.q} 
+            <div
+              key={faq.q}
               className="bg-white rounded-xl p-5 shadow-sm border border-slate-200"
             >
               <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
@@ -335,7 +335,7 @@ export default function WaterDamageRestorationPage() {
           </div>
           <div className="flex-1 text-white">
             <blockquote className="text-lg italic mb-2">
-              &quot;Basement flooded during a storm. AK Water Works was here within the hour, 
+              &quot;Basement flooded during a storm. AK Water Works was here within the hour,
               extracted all the water, and handled everything including our insurance claim. Amazing service!&quot;
             </blockquote>
             <p className="font-semibold">— Michelle & Dave K., Warren, OH</p>
@@ -347,11 +347,11 @@ export default function WaterDamageRestorationPage() {
       <section className="bg-slate-900 text-white rounded-2xl p-6 md:p-10">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get Your Property Restored
+            Get Your Property Recovered
           </h2>
           <p className="text-xl text-slate-300 mb-8 max-w-xl mx-auto">
-            Water damage doesn&apos;t wait, and neither should you. 
-            Call now for emergency response and complete restoration.
+            Water damage doesn&apos;t wait, and neither should you.
+            Call now for emergency response and complete recovery.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -362,7 +362,7 @@ export default function WaterDamageRestorationPage() {
               {siteConfig.phone}
             </a>
             <button
-              onClick={() => openBooking('Water Damage Restoration')}
+              onClick={() => openBooking('Water Damage Recovery')}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-bold text-lg rounded-lg transition-colors"
             >
               Request Service
@@ -373,9 +373,9 @@ export default function WaterDamageRestorationPage() {
           {/* Final Jack */}
           <div className="mt-8 flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="/images/Jack w Wrench.svg" 
-              alt="" 
+            <img
+              src="/images/Jack w Wrench.svg"
+              alt=""
               className="h-20 w-auto opacity-80"
               aria-hidden="true"
             />

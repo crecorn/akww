@@ -258,36 +258,67 @@ const nextConfig: NextConfig = {
       },
 
       // ============================================
-      // RESTORE → RESTORATION REDIRECTS
+      // RESTORATION → EMERGENCIES REDIRECTS
       // ============================================
       {
+        source: '/restoration',
+        destination: '/emergencies',
+        permanent: true,
+      },
+      {
+        source: '/restoration/',
+        destination: '/emergencies',
+        permanent: true,
+      },
+      {
+        source: '/restoration/water-damage-restoration',
+        destination: '/emergencies/water-damage',
+        permanent: true,
+      },
+      {
+        source: '/restoration/water-extraction',
+        destination: '/emergencies/water-extraction',
+        permanent: true,
+      },
+      {
+        source: '/restoration/contact',
+        destination: '/emergencies/contact',
+        permanent: true,
+      },
+      {
+        source: '/restoration/resources',
+        destination: '/emergencies/resources',
+        permanent: true,
+      },
+      // Old /restore paths → new /emergencies hub
+      {
         source: '/restore',
-        destination: '/restoration',
+        destination: '/emergencies',
         permanent: true,
       },
       {
         source: '/restore/',
-        destination: '/restoration',
+        destination: '/emergencies',
         permanent: true,
       },
       {
         source: '/restore/water-damage-restoration',
-        destination: '/restoration/water-damage-restoration',
+        destination: '/emergencies/water-damage',
         permanent: true,
       },
       {
         source: '/restore/water-extraction',
-        destination: '/restoration/water-extraction',
+        destination: '/emergencies/water-extraction',
         permanent: true,
       },
       {
         source: '/restore/contact',
-        destination: '/restoration/contact',
+        destination: '/emergencies/contact',
         permanent: true,
       },
       {
         source: '/restore/resources',
-        destination: '/restoration/resources',
+        destination: '/emergencies/resources',
         permanent: true,
       },
       // Old waterproofing pages from /restore → new /waterproofing hub
@@ -308,41 +339,46 @@ const nextConfig: NextConfig = {
       },
 
       // ============================================
-      // WATER DAMAGE SERVICES
+      // WATER DAMAGE SERVICES → EMERGENCIES
       // ============================================
       {
         source: '/services/water-damage',
-        destination: '/water-damage',
+        destination: '/emergencies',
         permanent: true,
       },
       {
         source: '/services/water-damage/',
-        destination: '/water-damage',
+        destination: '/emergencies',
         permanent: true,
       },
       {
         source: '/services/water-damage/all-water-damage-restoration-services',
-        destination: '/water-damage',
+        destination: '/emergencies',
+        permanent: true,
+      },
+      {
+        source: '/water-damage',
+        destination: '/emergencies',
         permanent: true,
       },
       {
         source: '/water-damage/',
-        destination: '/water-damage',
+        destination: '/emergencies',
         permanent: true,
       },
       {
         source: '/services/water-damage/water-damage-restoration-services',
-        destination: '/water-damage/restoration',
+        destination: '/emergencies/water-damage',
         permanent: true,
       },
       {
         source: '/services/water-damage/emergency-water-clean-up-services',
-        destination: '/water-damage/emergency-cleanup',
+        destination: '/emergencies/water-extraction',
         permanent: true,
       },
       {
         source: '/services/water-damage/commercial-water-damage-restoration',
-        destination: '/water-damage/commercial',
+        destination: '/commercial/emergency',
         permanent: true,
       },
 

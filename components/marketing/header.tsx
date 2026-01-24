@@ -46,12 +46,12 @@ const navigation = [
     ],
   },
   {
-    name: 'Restoration',
-    href: '/restoration',
+    name: 'Emergencies',
+    href: '/emergencies',
     children: [
-      { name: 'Water Damage Restoration', href: '/restoration/water-damage-restoration', description: 'Full recovery services' },
-      { name: 'Water Pump Out & Clean Up', href: '/restoration/water-extraction', description: 'Emergency removal' },
-      { name: 'All Restoration Services →', href: '/restoration' },
+      { name: 'Water Damage Recovery', href: '/emergencies/water-damage', description: 'Full recovery services' },
+      { name: 'Water Pump Out & Clean Up', href: '/emergencies/water-extraction', description: 'Emergency removal' },
+      { name: 'All Emergency Services →', href: '/emergencies' },
     ],
   },
   {

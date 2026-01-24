@@ -41,16 +41,16 @@ const services = [
   },
   {
     icon: AlertTriangle,
-    title: 'Water Damage Restoration',
-    description: 'Fast response to water emergencies. Professional cleanup, drying, and restoration to protect your property.',
-    href: '/water-damage',
+    title: 'Emergency Services',
+    description: 'Fast response to water emergencies. Professional cleanup, drying, and recovery to protect your property.',
+    href: '/emergencies',
     color: 'bg-amber-500',
   },
   {
     icon: Building2,
     title: 'Commercial Plumbing',
     description: 'Comprehensive plumbing solutions for businesses, restaurants, and property managers throughout the region.',
-    href: '/commercial-plumbing',
+    href: '/commercial',
     color: 'bg-emerald-500',
   },
 ]
@@ -261,7 +261,7 @@ export default function HomePage() {
               Proudly Serving Northeast Ohio
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Serving 4 counties across Northeast Ohio with expert plumbing, waterproofing, and restoration services.
+              Serving 4 counties across Northeast Ohio with expert plumbing, waterproofing, and emergency water damage services.
             </p>
           </div>
 

@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Phone, Mail, Droplets, Clock, CheckCircle2, Loader2, AlertTriangle } from 'lucide-react'
+import { Phone, Mail, Waves, Clock, CheckCircle2, Loader2, AlertTriangle } from 'lucide-react'
 import { siteConfig } from '@/lib/constants/site'
 
 const SERVICE_TYPES = [
   'Water Damage - Emergency',
-  'Water Damage - Restoration',
+  'Water Damage - Recovery',
   'Water Pump Out & Clean Up',
   'Basement Waterproofing',
   'Basement Drainage / French Drain',
@@ -23,7 +23,7 @@ const URGENCY_LEVELS = [
   { value: 'planning', label: 'Planning - Gathering estimates' },
 ]
 
-export default function RestorationContactPage() {
+export default function EmergencyContactPage() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -48,10 +48,10 @@ export default function RestorationContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          serviceType: `Restoration: ${formData.serviceType}`,
+          serviceType: `Emergency: ${formData.serviceType}`,
           message: `Service: ${formData.serviceType}\nUrgency: ${formData.urgency}\nStanding Water: ${formData.hasStandingWater}\nAddress: ${formData.address}\n\n${formData.message}`,
-          source: 'Restoration Contact Form',
-          sourcePage: '/restoration/contact',
+          source: 'Emergency Contact Form',
+          sourcePage: '/emergencies/contact',
         }),
       })
 
@@ -72,8 +72,8 @@ export default function RestorationContactPage() {
     <div className="space-y-8">
       <header>
         <div className="flex items-center gap-2 text-[var(--color-primary)] mb-2">
-          <Droplets className="w-5 h-5" />
-          <span className="font-medium">Restoration Services</span>
+          <Waves className="w-5 h-5" />
+          <span className="font-medium">Emergency Services</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
           Request Service or Free Estimate
