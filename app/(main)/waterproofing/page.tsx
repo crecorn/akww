@@ -2,21 +2,24 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import {
   Phone,
-  CheckCircle2,
   ArrowRight,
-  Shield,
-  Clock,
-  Award,
   Droplets,
   Home,
+  Shield,
   Waves,
   PenTool,
   AlertTriangle,
-  Star,
-  Users
 } from 'lucide-react'
 import { siteConfig } from '@/lib/constants/site'
 import { waterproofingServicesData } from '@/lib/constants/waterproofing'
+import {
+  VanSection,
+  ReviewSection,
+  EmergencyCTA,
+  JackMascotAccent,
+  ServiceAreaSection,
+  FeatureCardsSection,
+} from '@/components/ui/hub-page-sections'
 
 export const metadata: Metadata = {
   title: 'Basement Waterproofing Services Northeast Ohio',
@@ -49,13 +52,6 @@ const warningSignsData = [
   'High humidity in basement',
 ]
 
-const whyChooseUs = [
-  { icon: Shield, title: 'Lifetime Warranty', desc: 'Transferable warranty that protects your investment.' },
-  { icon: Clock, title: 'Fast Response', desc: 'Same-day estimates and quick project starts.' },
-  { icon: Award, title: 'Certified Technicians', desc: 'Trained in the latest waterproofing techniques.' },
-  { icon: Users, title: 'Local Experts', desc: 'We know Northeast Ohio basements.' },
-]
-
 export default function WaterproofingHubPage() {
   return (
     <>
@@ -86,7 +82,7 @@ export default function WaterproofingHubPage() {
 
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
-              Northeast Ohio's trusted waterproofing experts. We solve wet basement problems
+              Northeast Ohio&apos;s trusted waterproofing experts. We solve wet basement problems
               permanently with proven solutions backed by our lifetime warranty.
             </p>
 
@@ -123,6 +119,9 @@ export default function WaterproofingHubPage() {
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-[35px] bg-gradient-to-t from-slate-50 to-transparent" />
       </section>
+
+      {/* Van Section */}
+      <VanSection />
 
       {/* Services Section */}
       <section className="py-16 md:py-24 bg-slate-50">
@@ -181,7 +180,7 @@ export default function WaterproofingHubPage() {
                 </h2>
               </div>
               <p className="text-lg text-slate-600 mb-8">
-                Don't ignore these common signs of water intrusion. Early detection can save
+                Don&apos;t ignore these common signs of water intrusion. Early detection can save
                 thousands in repairs.
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
@@ -216,160 +215,31 @@ export default function WaterproofingHubPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16 md:py-24 bg-slate-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Northeast Ohio Trusts AK Water Works
-            </h2>
-            <p className="text-lg text-slate-400">
-              We've built our reputation on quality work, lifetime warranties, and exceptional customer service.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseUs.map((item) => {
-              const Icon = item.icon
-              return (
-                <div key={item.title} className="bg-slate-800 rounded-xl p-6 text-center">
-                  <div className="w-14 h-14 bg-[var(--color-accent)]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-7 h-7 text-[var(--color-accent)]" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                  <p className="text-slate-400 text-sm">{item.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Steps */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Our Waterproofing Process
-            </h2>
-            <p className="text-lg text-slate-600">
-              From inspection to installation, we follow a proven process to ensure your basement stays dry.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { step: '1', title: 'Free Inspection', desc: 'We assess your basement and identify all water entry points.' },
-              { step: '2', title: 'Custom Solution', desc: 'We design a waterproofing system tailored to your home.' },
-              { step: '3', title: 'Expert Installation', desc: 'Our certified team installs your system efficiently.' },
-              { step: '4', title: 'Lifetime Protection', desc: 'Enjoy a dry basement backed by our lifetime warranty.' },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-[var(--color-primary)] text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="font-bold text-slate-900 text-lg mb-2">{item.title}</h3>
-                <p className="text-slate-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Reviews Section */}
-      <section className="py-16 md:py-24 bg-[var(--color-accent)]">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                What Our Customers Say
-              </h2>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-white text-white" />
-                  ))}
-                </div>
-                <span className="text-2xl font-bold">{siteConfig.reviews.rating}</span>
-                <span className="text-green-100">({siteConfig.reviews.count}+ reviews)</span>
-              </div>
-              <p className="text-green-100 mb-6">
-                Don't just take our word for it. See what Northeast Ohio homeowners
-                are saying about our waterproofing services.
-              </p>
-              <Link
-                href="/reviews"
-                className="inline-flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all"
-              >
-                Read All Reviews <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl">
-              <blockquote className="text-lg text-slate-700 italic mb-4">
-                &quot;After years of dealing with a wet basement, AK Water Works finally solved the problem.
-                Their team was professional, the price was fair, and the lifetime warranty gives us peace of mind.
-                Should have called them years ago!&quot;
-              </blockquote>
-              <p className="font-semibold text-slate-900">— Sarah M., Warren, OH</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Why Choose Us / Review Section */}
+      <ReviewSection
+        categoryTitle="Why Northeast Ohio Trusts Our Waterproofing Team"
+        categoryDescription="When water problems threaten your home, you need experts with proven solutions. Our lifetime warranty and certified technicians give you peace of mind."
+      />
 
       {/* Emergency CTA */}
-      <section className="py-16 md:py-20 bg-red-600">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="text-white text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
-                <AlertTriangle className="w-8 h-8" />
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  Water in Your Basement?
-                </h2>
-              </div>
-              <p className="text-xl text-red-100">
-                Don't wait for the damage to get worse. We offer fast response and emergency service.
-              </p>
-            </div>
-            <a
-              href={`tel:${siteConfig.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-red-600 font-bold text-xl rounded-xl hover:bg-red-50 transition-colors shadow-xl whitespace-nowrap"
-            >
-              <Phone className="w-6 h-6" />
-              Call Now: {siteConfig.phone}
-            </a>
-          </div>
-        </div>
-      </section>
+      <EmergencyCTA
+        title="Waterproofing Emergency?"
+        description="Don't wait! Water damage gets worse every day. Get a free inspection now."
+      />
 
-      {/* Final CTA */}
-      <section className="py-16 md:py-20 bg-[var(--color-primary)]">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready for a Dry Basement?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Schedule your free waterproofing inspection today. Our experts will identify the
-            source of your water problems and recommend the best solution for your home.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`tel:${siteConfig.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[var(--color-primary)] font-bold text-lg rounded-lg hover:bg-slate-100 transition-colors"
-            >
-              <Phone className="w-5 h-5" />
-              {siteConfig.phone}
-            </a>
-            <Link
-              href="/waterproofing/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-bold text-lg rounded-lg transition-colors"
-            >
-              Get Free Estimate
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Jack Mascot */}
+      <JackMascotAccent />
+
+      {/* Service Areas */}
+      <ServiceAreaSection
+        categoryDescription="Serving 4 counties across Northeast Ohio with expert basement waterproofing, foundation repair, and crawl space encapsulation."
+      />
+
+      {/* Feature Cards */}
+      <FeatureCardsSection
+        financingDescription="Flexible payment options for waterproofing projects. Protect your home now, pay over time."
+        guaranteeDescription="Our lifetime transferable warranty backs every waterproofing job. Your dry basement is guaranteed."
+      />
     </>
   )
 }

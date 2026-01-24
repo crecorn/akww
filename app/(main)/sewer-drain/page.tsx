@@ -1,12 +1,9 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { 
-  Phone, 
-  CheckCircle2, 
-  ArrowRight, 
-  Shield, 
-  Clock, 
-  Award,
+import {
+  Phone,
+  CheckCircle2,
+  ArrowRight,
   Droplets,
   Construction,
   Video,
@@ -15,10 +12,17 @@ import {
   Container,
   Siren,
   AlertTriangle,
-  Star
 } from 'lucide-react'
 import { siteConfig } from '@/lib/constants/site'
 import { sewerDrainServicesData } from '@/lib/constants/sewer-drain'
+import {
+  VanSection,
+  ReviewSection,
+  EmergencyCTA,
+  JackMascotAccent,
+  ServiceAreaSection,
+  FeatureCardsSection,
+} from '@/components/ui/hub-page-sections'
 
 export const metadata: Metadata = {
   title: 'Sewer & Drain Services | AK Water Works',
@@ -47,20 +51,13 @@ const warningSignsList = [
   'Sewage backup in basement',
 ]
 
-const whyChooseUs = [
-  { icon: Clock, title: '24/7 Emergency Service', desc: 'Drain emergencies don\'t wait. Neither do we.' },
-  { icon: Video, title: 'Camera Diagnostics', desc: 'We find the problem before we start digging.' },
-  { icon: Shield, title: 'Upfront Pricing', desc: 'No surprises. Know the cost before work begins.' },
-  { icon: Award, title: 'Satisfaction Guaranteed', desc: 'We stand behind every job we complete.' },
-]
-
 export default function SewerDrainPage() {
   return (
     <>
       {/* Full-Width Hero */}
       <section className="relative min-h-[600px] md:min-h-[700px] flex items-center text-white overflow-hidden">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/images/Hero-sewer-drain.webp')" }}
         />
@@ -84,7 +81,7 @@ export default function SewerDrainPage() {
 
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
-              From clogged drains to complete sewer line replacement, we have the tools 
+              From clogged drains to complete sewer line replacement, we have the tools
               and expertise to keep your drains flowing and your property protected.
             </p>
 
@@ -122,6 +119,9 @@ export default function SewerDrainPage() {
         <div className="absolute bottom-0 left-0 right-0 h-[35px] bg-gradient-to-t from-slate-50 to-transparent" />
       </section>
 
+      {/* Van Section */}
+      <VanSection />
+
       {/* Services Section */}
       <section className="py-16 md:py-24 bg-slate-50">
         <div className="container mx-auto px-4">
@@ -130,7 +130,7 @@ export default function SewerDrainPage() {
               Our Sewer & Drain Services
             </h2>
             <p className="text-lg text-slate-600">
-              Complete drain and sewer solutions for residential and commercial properties. 
+              Complete drain and sewer solutions for residential and commercial properties.
               We use the latest technology to diagnose and fix problems efficiently.
             </p>
           </div>
@@ -181,7 +181,7 @@ export default function SewerDrainPage() {
                 </h2>
               </div>
               <p className="text-lg text-slate-600 mb-8">
-                Don&apos;t ignore these symptoms – they often indicate bigger problems 
+                Don&apos;t ignore these symptoms – they often indicate bigger problems
                 that can lead to costly repairs if left untreated.
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
@@ -208,131 +208,31 @@ export default function SewerDrainPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16 md:py-24 bg-slate-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose AK Water Works
-            </h2>
-            <p className="text-lg text-slate-400">
-              We combine modern technology with experienced technicians to deliver 
-              fast, effective drain and sewer solutions.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseUs.map((item) => {
-              const Icon = item.icon
-              return (
-                <div key={item.title} className="bg-slate-800 rounded-xl p-6 text-center">
-                  <div className="w-14 h-14 bg-[var(--color-accent)]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-7 h-7 text-[var(--color-accent)]" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                  <p className="text-slate-400 text-sm">{item.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Reviews Section */}
-      <section className="py-16 md:py-24 bg-[var(--color-accent)]">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                What Our Customers Say
-              </h2>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-white text-white" />
-                  ))}
-                </div>
-                <span className="text-2xl font-bold">{siteConfig.reviews.rating}</span>
-                <span className="text-green-100">({siteConfig.reviews.count}+ reviews)</span>
-              </div>
-              <p className="text-green-100 mb-6">
-                Our customers trust us to solve their toughest drain problems. 
-                See what they&apos;re saying about our service.
-              </p>
-              <Link
-                href="/reviews"
-                className="inline-flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all"
-              >
-                Read All Reviews <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl">
-              <blockquote className="text-lg text-slate-700 italic mb-4">
-                &quot;AK Water Works cleared our main drain in no time. They used a camera 
-                to show us exactly what was causing the backup. Professional, honest, 
-                and fairly priced!&quot;
-              </blockquote>
-              <p className="font-semibold text-slate-900">— Recent Customer, Trumbull County</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Why Choose Us / Review Section */}
+      <ReviewSection
+        categoryTitle="Why Northeast Ohio Trusts Our Drain Experts"
+        categoryDescription="When drain problems strike, you need a team with the right tools and expertise. We use HD camera inspection and hydro jetting to solve problems fast."
+      />
 
       {/* Emergency CTA */}
-      <section className="py-16 md:py-20 bg-red-600">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="text-white text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
-                <AlertTriangle className="w-8 h-8" />
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  Drain Emergency?
-                </h2>
-              </div>
-              <p className="text-xl text-red-100">
-                Sewage backup? Clogged main line? We&apos;re available 24/7 and respond fast.
-              </p>
-            </div>
-            <a
-              href={`tel:${siteConfig.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-red-600 font-bold text-xl rounded-xl hover:bg-red-50 transition-colors shadow-xl whitespace-nowrap"
-            >
-              <Phone className="w-6 h-6" />
-              Call Now: {siteConfig.phone}
-            </a>
-          </div>
-        </div>
-      </section>
+      <EmergencyCTA
+        title="Drain Emergency?"
+        description="Don't wait! Our team is available 24/7 to help with sewer backups and clogged drains."
+      />
 
-      {/* Final CTA */}
-      <section className="py-16 md:py-20 bg-[var(--color-primary)]">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Clear Your Drains?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Schedule service online or give us a call. We&apos;ll get your drains 
-            flowing properly in no time.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`tel:${siteConfig.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[var(--color-primary)] font-bold text-lg rounded-lg hover:bg-slate-100 transition-colors"
-            >
-              <Phone className="w-5 h-5" />
-              {siteConfig.phone}
-            </a>
-            <Link
-              href="/sewer-drain/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-bold text-lg rounded-lg transition-colors"
-            >
-              Schedule Service
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Jack Mascot */}
+      <JackMascotAccent />
+
+      {/* Service Areas */}
+      <ServiceAreaSection
+        categoryDescription="Serving 4 counties across Northeast Ohio with expert drain cleaning, sewer repair, and camera inspection services."
+      />
+
+      {/* Feature Cards */}
+      <FeatureCardsSection
+        financingDescription="Flexible payment options for sewer and drain repairs. Get the service you need now."
+        guaranteeDescription="We stand behind every drain job. Your drains flowing freely is our promise."
+      />
     </>
   )
 }

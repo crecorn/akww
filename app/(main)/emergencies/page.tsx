@@ -2,10 +2,18 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import {
   Droplets, Waves,
-  ArrowRight, Phone, Clock, Award, AlertTriangle, Star, Users, Shield
+  ArrowRight, Phone, AlertTriangle,
 } from 'lucide-react'
 import { emergencyServicesData } from '@/lib/constants/restoration'
 import { siteConfig } from '@/lib/constants/site'
+import {
+  VanSection,
+  ReviewSection,
+  EmergencyCTA,
+  JackMascotAccent,
+  ServiceAreaSection,
+  FeatureCardsSection,
+} from '@/components/ui/hub-page-sections'
 
 export const metadata: Metadata = {
   title: 'Emergency Water Damage Services | 24/7 Response | AK Water Works',
@@ -28,13 +36,6 @@ const processSteps = [
   { step: '2', title: 'Assessment', desc: 'We inspect and document damage' },
   { step: '3', title: 'Mitigation', desc: 'Stop damage and begin drying' },
   { step: '4', title: 'Recovery', desc: 'Complete repairs and cleanup' },
-]
-
-const whyChooseUs = [
-  { icon: Clock, title: '24/7 Emergency Response', desc: 'Water damage doesn\'t wait. Neither do we.' },
-  { icon: Award, title: 'IICRC Certified', desc: 'Industry-certified cleanup technicians.' },
-  { icon: Shield, title: 'Insurance Assistance', desc: 'We work with your insurance company.' },
-  { icon: Users, title: 'Experienced Team', desc: 'Skilled technicians with years of experience.' },
 ]
 
 export default function EmergenciesPage() {
@@ -128,6 +129,9 @@ export default function EmergenciesPage() {
         </div>
       </section>
 
+      {/* Van Section */}
+      <VanSection />
+
       {/* Services Section */}
       <section className="py-16 md:py-24 bg-slate-50">
         <div className="container mx-auto px-4">
@@ -216,104 +220,31 @@ export default function EmergenciesPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16 md:py-24 bg-slate-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose AK Water Works
-            </h2>
-            <p className="text-lg text-slate-400">
-              We combine rapid response with professional recovery to get your life back to normal.
-            </p>
-          </div>
+      {/* Why Choose Us / Review Section */}
+      <ReviewSection
+        categoryTitle="Why Northeast Ohio Trusts Our Emergency Team"
+        categoryDescription="When water damage strikes, you need a team that responds fast. Our IICRC certified technicians are available 24/7 and work with your insurance."
+      />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseUs.map((item) => {
-              const Icon = item.icon
-              return (
-                <div key={item.title} className="bg-slate-800 rounded-xl p-6 text-center">
-                  <div className="w-14 h-14 bg-[var(--color-accent)]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-7 h-7 text-[var(--color-accent)]" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                  <p className="text-slate-400 text-sm">{item.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+      {/* Emergency CTA */}
+      <EmergencyCTA
+        title="Water Damage Emergency?"
+        description="Don't wait! Water damage gets worse every minute. Call now for 24/7 emergency response."
+      />
 
-      {/* Reviews Section */}
-      <section className="py-16 md:py-24 bg-[var(--color-accent)]">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                What Our Customers Say
-              </h2>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-white text-white" />
-                  ))}
-                </div>
-                <span className="text-2xl font-bold">{siteConfig.reviews.rating}</span>
-                <span className="text-green-100">({siteConfig.reviews.count}+ reviews)</span>
-              </div>
-              <p className="text-green-100 mb-6">
-                Homeowners trust us when water damage strikes.
-                See why we&apos;re the top choice for water damage recovery.
-              </p>
-              <Link
-                href="/reviews"
-                className="inline-flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all"
-              >
-                Read All Reviews <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+      {/* Jack Mascot */}
+      <JackMascotAccent />
 
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl">
-              <blockquote className="text-lg text-slate-700 italic mb-4">
-                &quot;Our basement flooded at 2 AM. AK Water Works was here within an hour
-                and had all the water extracted by morning. They even helped with our
-                insurance claim. Lifesavers!&quot;
-              </blockquote>
-              <p className="font-semibold text-slate-900">— Sarah M., Warren, OH</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Service Areas */}
+      <ServiceAreaSection
+        categoryDescription="Serving 4 counties across Northeast Ohio with 24/7 emergency water damage response, extraction, and recovery services."
+      />
 
-      {/* Final CTA */}
-      <section className="py-16 md:py-20 bg-[var(--color-primary)]">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Water Damage Emergency?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Don&apos;t wait—water damage gets worse by the minute.
-            Call now for 24/7 emergency water damage recovery.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`tel:${siteConfig.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[var(--color-primary)] font-bold text-lg rounded-lg hover:bg-slate-100 transition-colors"
-            >
-              <Phone className="w-5 h-5" />
-              {siteConfig.phone}
-            </a>
-            <Link
-              href="/emergencies/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-bold text-lg rounded-lg transition-colors"
-            >
-              Request Service
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Feature Cards */}
+      <FeatureCardsSection
+        financingDescription="Flexible payment options for emergency services. We also work directly with your insurance company."
+        guaranteeDescription="We stand behind our emergency work. Your property recovery is our priority."
+      />
     </>
   )
 }

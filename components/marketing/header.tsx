@@ -35,17 +35,6 @@ const navigation = [
     ],
   },
   {
-    name: 'Commercial',
-    href: '/commercial',
-    children: [
-      { name: 'New Construction', href: '/commercial/new-construction', description: 'Build-out plumbing' },
-      { name: 'Municipal', href: '/commercial/municipal', description: 'Government facilities' },
-      { name: 'Industrial', href: '/commercial/industrial', description: 'Manufacturing & plants' },
-      { name: '24/7 Emergency', href: '/commercial/emergency', description: 'Immediate response' },
-      { name: 'All Commercial Services →', href: '/commercial' },
-    ],
-  },
-  {
     name: 'Emergencies',
     href: '/emergencies',
     children: [
@@ -62,6 +51,17 @@ const navigation = [
       { name: 'Basement Drainage', href: '/waterproofing/basement-drainage', description: 'French drains & more' },
       { name: 'Crawl Space Encapsulation', href: '/waterproofing/crawl-space-encapsulation', description: 'Moisture control' },
       { name: 'All Waterproofing Services →', href: '/waterproofing' },
+    ],
+  },
+  {
+    name: 'Commercial',
+    href: '/commercial',
+    children: [
+      { name: 'New Construction', href: '/commercial/new-construction', description: 'Build-out plumbing' },
+      { name: 'Municipal', href: '/commercial/municipal', description: 'Government facilities' },
+      { name: 'Industrial', href: '/commercial/industrial', description: 'Manufacturing & plants' },
+      { name: '24/7 Emergency', href: '/commercial/emergency', description: 'Immediate response' },
+      { name: 'All Commercial Services →', href: '/commercial' },
     ],
   },
   {
