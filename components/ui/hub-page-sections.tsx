@@ -24,16 +24,6 @@ export function VanSection() {
             className="h-[180px] md:h-[220px] w-auto object-contain -mt-8"
           />
         </div>
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-4">
-          <div className="flex items-center gap-2 text-slate-700">
-            <CheckCircle2 className="w-5 h-5 text-[var(--color-accent)]" />
-            <span className="font-medium">{siteConfig.reviews.count}+ Reviews</span>
-          </div>
-          <div className="flex items-center gap-2 text-slate-700">
-            <CheckCircle2 className="w-5 h-5 text-[var(--color-accent)]" />
-            <span className="font-medium">Bonded & Insured</span>
-          </div>
-        </div>
       </div>
     </section>
   )

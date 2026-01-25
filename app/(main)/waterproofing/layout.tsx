@@ -1,18 +1,25 @@
-import { Metadata } from 'next'
-import { WaterproofingSectionNav } from '@/components/waterproofing/section-nav'
+'use client'
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s | Waterproofing Services | AK Water Works',
-    default: 'Basement Waterproofing Services | AK Water Works',
-  },
-}
+import { usePathname } from 'next/navigation'
+import { WaterproofingSectionNav } from '@/components/waterproofing/section-nav'
 
 export default function WaterproofingLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const pathname = usePathname()
+  const isHubPage = pathname === '/waterproofing'
+
+  // Hub page gets full-width layout, sub-pages get sidebar
+  if (isHubPage) {
+    return (
+      <div className="min-h-screen">
+        {children}
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Horizontal nav for mobile/tablet */}

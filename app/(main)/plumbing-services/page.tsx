@@ -35,7 +35,6 @@ const trustIndicators = [
   { stat: '1000+', label: 'Jobs Completed' },
   { stat: '24/7', label: 'Emergency Service' },
   { stat: '100%', label: 'Satisfaction Guaranteed' },
-  { stat: '5+', label: 'Years Experience' },
 ]
 
 const commonProblems = [

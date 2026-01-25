@@ -38,7 +38,6 @@ const trustIndicators = [
   { stat: 'Lifetime', label: 'Transferable Warranty' },
   { stat: 'Free', label: 'Inspections' },
   { stat: '100%', label: 'Satisfaction Guaranteed' },
-  { stat: '5+', label: 'Years Experience' },
 ]
 
 const warningSignsData = [
