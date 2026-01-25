@@ -98,6 +98,11 @@ const navigation = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null)
+
+  const toggleMobileAccordion = (name: string) => {
+    setMobileAccordion(mobileAccordion === name ? null : name)
+  }
 
   return (
     <>
@@ -208,32 +213,56 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu - Accordion style */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white border-t border-slate-100 animate-slide-up max-h-[80vh] overflow-y-auto">
             <nav className="container mx-auto px-4 py-4 space-y-1">
               {navigation.map((item) => (
-                <div key={item.name}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-lg font-medium"
-                  >
-                    {item.name}
-                  </Link>
-                  {item.children && (
-                    <div className="pl-4 space-y-1">
-                      {item.children.slice(0, 5).map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="block px-4 py-2 text-sm text-slate-600 hover:text-[var(--color-primary)]"
-                        >
-                          {child.name}
-                        </Link>
-                      ))}
-                    </div>
+                <div key={item.name} className="border-b border-slate-100 last:border-b-0">
+                  {item.children ? (
+                    <>
+                      {/* Accordion header */}
+                      <button
+                        onClick={() => toggleMobileAccordion(item.name)}
+                        className="flex items-center justify-between w-full px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-lg font-medium"
+                      >
+                        <span>{item.name}</span>
+                        <ChevronDown
+                          className={cn(
+                            'w-5 h-5 text-slate-400 transition-transform duration-200',
+                            mobileAccordion === item.name && 'rotate-180'
+                          )}
+                        />
+                      </button>
+                      {/* Accordion content */}
+                      <div
+                        className={cn(
+                          'overflow-hidden transition-all duration-200',
+                          mobileAccordion === item.name ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                        )}
+                      >
+                        <div className="pl-4 pb-2 space-y-1">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="block px-4 py-2.5 text-sm text-slate-600 hover:text-[var(--color-primary)] hover:bg-slate-50 rounded-lg"
+                            >
+                              {child.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-lg font-medium"
+                    >
+                      {item.name}
+                    </Link>
                   )}
                 </div>
               ))}

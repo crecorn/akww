@@ -55,10 +55,10 @@ export default function SewerDrainPage() {
   return (
     <>
       {/* Full-Width Hero */}
-      <section className="relative min-h-[600px] md:min-h-[700px] flex items-center text-white overflow-hidden">
+      <section className="relative min-h-[875px] md:min-h-[700px] flex items-center text-white overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-[66%] md:bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/images/Hero-sewer-drain.webp')" }}
         />
         {/* Dark overlay for text readability */}

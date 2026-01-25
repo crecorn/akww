@@ -21,7 +21,7 @@ export function VanSection() {
           <img
             src="/images/AK Water Works Plumbing Service.webp"
             alt="AK Water Works Service Van"
-            className="h-[180px] md:h-[220px] w-auto object-contain -mt-6"
+            className="h-[180px] md:h-[220px] w-auto object-contain mt-[calc(var(--spacing)*-25)]"
           />
         </div>
       </div>

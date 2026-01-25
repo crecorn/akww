@@ -27,8 +27,8 @@ const iconMap: Record<string, typeof Droplets> = {
 const trustIndicators = [
   { stat: 'Fast', label: 'Response Time' },
   { stat: '24/7', label: 'Emergency Service' },
-  { stat: 'IICRC', label: 'Certified' },
-  { stat: '100%', label: 'Satisfaction' },
+  { stat: 'IICRC', label: 'Certified Techs' },
+  { stat: '100%', label: 'Satisfaction Guaranteed' },
 ]
 
 const processSteps = [
@@ -42,10 +42,10 @@ export default function EmergenciesPage() {
   return (
     <>
       {/* Full-Width Hero */}
-      <section className="relative min-h-[600px] md:min-h-[700px] flex items-center text-white overflow-hidden">
+      <section className="relative min-h-[875px] md:min-h-[700px] flex items-center text-white overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-top bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-[66%] md:bg-top bg-no-repeat"
           style={{ backgroundImage: "url('/images/Hero-Restoration.webp')" }}
         />
         {/* Dark overlay for text readability */}

@@ -32,9 +32,10 @@ const iconMap: Record<string, typeof Wrench> = {
 }
 
 const trustIndicators = [
-  { stat: '1000+', label: 'Jobs Completed' },
+  { stat: 'Licensed', label: 'Expert Plumbers' },
   { stat: '24/7', label: 'Emergency Service' },
   { stat: '100%', label: 'Satisfaction Guaranteed' },
+  { stat: 'Local', label: 'Family Owned' },
 ]
 
 const commonProblems = [
@@ -52,10 +53,10 @@ export default function PlumbingHubPage() {
   return (
     <>
       {/* Full-Width Hero */}
-      <section className="relative min-h-[600px] md:min-h-[700px] flex items-center text-white overflow-hidden">
+      <section className="relative min-h-[875px] md:min-h-[700px] flex items-center text-white overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-[66%] md:bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/images/Hero-plumbing.webp')" }}
         />
         {/* Dark overlay for text readability */}
