@@ -48,14 +48,19 @@ export default function AboutPage() {
   return (
     <>
       {/* Full-Width Hero */}
-      <section className="relative min-h-[880px] flex items-center md:items-center items-end text-white overflow-hidden">
-        {/* Background Image */}
+      <section className="relative min-h-[880px] flex items-end md:items-center text-white overflow-hidden">
+        {/* Background Image - Mobile */}
         <div
-          className="absolute inset-0 bg-cover bg-[88%] md:bg-top bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+          style={{ backgroundImage: "url('/images/Hero-Company mobile.webp')" }}
+        />
+        {/* Background Image - Desktop */}
+        <div
+          className="absolute inset-0 bg-cover bg-top bg-no-repeat hidden md:block"
           style={{ backgroundImage: "url('/images/Hero-Company.webp')" }}
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/30 md:bg-gradient-to-r md:from-slate-900/90 md:via-slate-900/70 md:to-slate-900/30 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent md:bg-gradient-to-r md:from-slate-900/90 md:via-slate-900/70 md:to-slate-900/30" />
 
         {/* Content */}
         <div className="container mx-auto px-4 relative z-10 pb-16 md:pb-0">
