@@ -45,7 +45,7 @@ export default function EmergenciesPage() {
       <section className="relative min-h-[875px] md:min-h-[700px] flex items-center text-white overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-[66%] md:bg-top bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-[75%] md:bg-top bg-no-repeat"
           style={{ backgroundImage: "url('/images/Hero-emergency-water-cleanup.webp')" }}
         />
         {/* Dark overlay for text readability */}
