@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import {
   Droplets, Waves,
-  ArrowRight, Phone, AlertTriangle,
+  ArrowRight, Phone,
 } from 'lucide-react'
 import { emergencyServicesData } from '@/lib/constants/restoration'
 import { siteConfig } from '@/lib/constants/site'
@@ -46,7 +46,7 @@ export default function EmergenciesPage() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-[66%] md:bg-top bg-no-repeat"
-          style={{ backgroundImage: "url('/images/Hero-Restoration.webp')" }}
+          style={{ backgroundImage: "url('/images/Hero-emergency-water-cleanup.webp')" }}
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/30" />
@@ -110,14 +110,7 @@ export default function EmergenciesPage() {
       {/* Emergency Banner */}
       <section className="bg-red-600 py-4">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-white">
-              <AlertTriangle className="w-6 h-6" />
-              <div>
-                <span className="font-bold">Have a Water Emergency?</span>
-                <span className="hidden sm:inline ml-2">Standing water causes more damage every minute.</span>
-              </div>
-            </div>
+          <div className="flex items-center justify-center">
             <a
               href={`tel:${siteConfig.phoneRaw}`}
               className="inline-flex items-center gap-2 px-6 py-2 bg-white text-red-600 font-bold rounded-lg hover:bg-red-50 transition-colors"
@@ -133,7 +126,7 @@ export default function EmergenciesPage() {
       <VanSection />
 
       {/* Services Section */}
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section className="py-6 md:py-10 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
