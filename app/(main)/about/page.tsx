@@ -48,17 +48,17 @@ export default function AboutPage() {
   return (
     <>
       {/* Full-Width Hero */}
-      <section className="relative min-h-[600px] md:min-h-[700px] flex items-center text-white overflow-hidden">
+      <section className="relative min-h-[880px] flex items-center md:items-center items-end text-white overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-top bg-no-repeat"
+        <div
+          className="absolute inset-0 bg-cover bg-[88%] md:bg-top bg-no-repeat"
           style={{ backgroundImage: "url('/images/Hero-Company.webp')" }}
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/30 md:bg-gradient-to-r md:from-slate-900/90 md:via-slate-900/70 md:to-slate-900/30 bg-gradient-to-t from-slate-900/95 via-slate-900/60 to-transparent" />
 
         {/* Content */}
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 pb-16 md:pb-0">
           <div className="max-w-3xl">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
@@ -73,14 +73,14 @@ export default function AboutPage() {
             </h1>
 
             {/* Subheading */}
-            <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
-              AK Water Works is more than a plumbing company—we&apos;re your neighbors. 
-              Founded in 2020, we&apos;ve built our reputation on honest work, fair pricing, 
+            <p className="text-xl md:text-2xl text-slate-300 mb-8 md:mb-8 leading-relaxed">
+              AK Water Works is more than a plumbing company—we&apos;re your neighbors.
+              Founded in 2020, we&apos;ve built our reputation on honest work, fair pricing,
               and treating every home like our own.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            {/* CTAs - Hidden on mobile */}
+            <div className="hidden md:flex flex-col sm:flex-row gap-4 mb-12">
               <a
                 href={`tel:${siteConfig.phoneRaw}`}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-semibold text-lg rounded-lg transition-colors"
@@ -97,8 +97,8 @@ export default function AboutPage() {
               </Link>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {/* Trust Indicators - Hidden on mobile */}
+            <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-6">
               {trustIndicators.map((item) => (
                 <div key={item.label} className="text-center md:text-left">
                   <div className="text-3xl md:text-4xl font-bold text-white">{item.stat}</div>
