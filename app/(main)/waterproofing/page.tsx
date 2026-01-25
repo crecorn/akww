@@ -59,7 +59,7 @@ export default function WaterproofingHubPage() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/Hero-waterproofing.webp')" }}
+          style={{ backgroundImage: "url('/images/Hero-Waterproofing.webp')" }}
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/30" />
@@ -123,7 +123,7 @@ export default function WaterproofingHubPage() {
       <VanSection />
 
       {/* Services Section */}
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section className="pt-[0.1rem] pb-16 md:pb-24 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
