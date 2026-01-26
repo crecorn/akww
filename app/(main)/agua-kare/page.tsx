@@ -82,7 +82,7 @@ export default function AquaKarePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[500px] md:min-h-[550px] flex items-center text-white overflow-hidden">
+      <section className="relative min-h-[500px] md:min-h-[550px] flex items-center text-white overflow-hidden py-16 md:py-20">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)] via-blue-700 to-blue-900">
           <div className="absolute inset-0 opacity-10">
@@ -107,15 +107,9 @@ export default function AquaKarePage() {
               Plumbing Protection & Maintenance Program
             </h1>
 
-            {/* Tagline */}
-            <p className="text-2xl md:text-3xl font-semibold text-blue-100 mb-4">
-              Peace of Mind. Protected Plumbing. Priority Service.
-            </p>
-
             {/* Subheading */}
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Stop waiting for plumbing emergencies to strike. Aqua-Kare members save 10% on every service call,
-              get priority scheduling, and receive annual inspections that catch small problems before they become expensive disasters.
+              Aqua-Kare members save 10% on every service call, get priority scheduling, and annual inspections.
             </p>
 
             {/* CTA */}
@@ -126,7 +120,6 @@ export default function AquaKarePage() {
               <Phone className="w-5 h-5" />
               Call to Join Today
             </a>
-            <p className="text-blue-200 mt-4 text-lg">{siteConfig.phone}</p>
           </div>
         </div>
 
