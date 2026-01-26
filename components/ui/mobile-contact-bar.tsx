@@ -29,13 +29,9 @@ export function MobileContactBar() {
       )}
     >
       <div className="grid grid-cols-3 divide-x divide-slate-200">
-        {/* Chat Button */}
+        {/* Contact Button - Opens booking modal */}
         <button
-          onClick={() => {
-            // Chat functionality coming soon
-            // For now, could open contact page or show a toast
-            window.location.href = '/contact'
-          }}
+          onClick={() => openBooking()}
           className={cn(
             "flex flex-col items-center justify-center py-3 transition-colors",
             isEmergencyPage
@@ -44,7 +40,7 @@ export function MobileContactBar() {
           )}
         >
           <MessageCircle className="w-5 h-5 mb-1" />
-          <span className="text-xs font-medium">Chat</span>
+          <span className="text-xs font-medium">Contact</span>
         </button>
 
         {/* Book Button */}

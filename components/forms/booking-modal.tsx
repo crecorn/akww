@@ -226,8 +226,7 @@ export function BookingModal({ isOpen, onClose, preselectedService }: BookingMod
         setSubmitStatus('error')
         setSubmitMessage(result.error || 'Something went wrong. Please try again.')
       }
-    } catch (error) {
-      console.error('Booking form error:', error)
+    } catch {
       setSubmitStatus('error')
       setSubmitMessage('Unable to submit. Please call us directly.')
     } finally {

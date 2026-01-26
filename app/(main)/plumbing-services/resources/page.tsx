@@ -1,15 +1,14 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { 
-  BookOpen, 
-  FileText, 
-  HelpCircle, 
-  Video,
-  ArrowRight,
+import {
+  BookOpen,
+  FileText,
+  HelpCircle,
   AlertTriangle,
   Wrench,
   Droplets,
-  Flame
+  Flame,
+  Clock
 } from 'lucide-react'
 import { BookNowButton } from '@/components/ui/book-now-button'
 
@@ -24,32 +23,24 @@ const guides = [
     description: 'Essential tips for protecting your pipes during Northeast Ohio winters.',
     icon: Droplets,
     category: 'Guide',
-    readTime: '5 min read',
-    href: '#',
   },
   {
     title: 'Signs You Need a New Water Heater',
     description: 'Know when it\'s time to repair vs. replace your water heater.',
     icon: Flame,
     category: 'Guide',
-    readTime: '6 min read',
-    href: '#',
   },
   {
     title: 'DIY vs. Call a Plumber',
     description: 'What you can fix yourself and when to call the professionals.',
     icon: Wrench,
     category: 'Guide',
-    readTime: '7 min read',
-    href: '#',
   },
   {
     title: 'Emergency Plumbing Checklist',
     description: 'What to do (and not do) when you have a plumbing emergency.',
     icon: AlertTriangle,
     category: 'Checklist',
-    readTime: '4 min read',
-    href: '#',
   },
 ]
 
@@ -150,23 +141,25 @@ export default function PlumbingResourcesPage() {
         </h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {guides.map((guide, index) => (
-            <Link
+            <div
               key={index}
-              href={guide.href}
-              className="group bg-white rounded-xl p-5 shadow-sm border border-slate-200 hover:shadow-md hover:border-[var(--color-primary)]/30 transition-all"
+              className="bg-white rounded-xl p-5 shadow-sm border border-slate-200"
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--color-primary)] transition-colors">
-                  <guide.icon className="w-5 h-5 text-[var(--color-primary)] group-hover:text-white transition-colors" />
+                <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center flex-shrink-0">
+                  <guide.icon className="w-5 h-5 text-[var(--color-primary)]" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-xs font-medium px-2 py-0.5 bg-slate-100 rounded text-slate-600">
                       {guide.category}
                     </span>
-                    <span className="text-xs text-slate-400">{guide.readTime}</span>
+                    <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 bg-amber-100 text-amber-700 rounded">
+                      <Clock className="w-3 h-3" />
+                      Coming Soon
+                    </span>
                   </div>
-                  <h3 className="font-bold text-slate-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+                  <h3 className="font-bold text-slate-900 mb-1">
                     {guide.title}
                   </h3>
                   <p className="text-sm text-slate-600 line-clamp-2">
@@ -174,11 +167,15 @@ export default function PlumbingResourcesPage() {
                   </p>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
-        <p className="text-sm text-slate-500 mt-4 italic">
-          More guides coming soon! Check back for new content.
+        <p className="text-sm text-slate-500 mt-4 text-center">
+          Want to be notified when guides are available?{' '}
+          <Link href="/plumbing-services/contact" className="text-[var(--color-primary)] font-medium hover:underline">
+            Contact us
+          </Link>{' '}
+          to join our mailing list.
         </p>
       </section>
 

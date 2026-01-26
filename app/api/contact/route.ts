@@ -112,13 +112,12 @@ export async function POST(request: NextRequest) {
         .single()
 
       if (error) {
-        console.error('Supabase insert error:', error)
+        // Supabase insert failed - continue with HCP as primary
       } else {
         supabaseResult = data
       }
-    } catch (dbError) {
-      console.error('Database error:', dbError)
-      // Continue even if DB fails - HCP is primary
+    } catch {
+      // Database error - continue even if DB fails, HCP is primary
     }
 
     // Return success if HCP succeeded
@@ -132,7 +131,6 @@ export async function POST(request: NextRequest) {
 
     // If HCP failed but we have Supabase backup
     if (supabaseResult) {
-      console.warn('HCP failed but Supabase succeeded:', hcpResult.error)
       return NextResponse.json({
         success: true,
         message: 'Thank you! We\'ll be in touch shortly.',
@@ -141,7 +139,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Both failed
-    console.error('Both HCP and Supabase failed')
     return NextResponse.json(
       { 
         success: false, 
@@ -150,8 +147,7 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     )
 
-  } catch (error) {
-    console.error('Contact form error:', error)
+  } catch {
     return NextResponse.json(
       { 
         success: false, 

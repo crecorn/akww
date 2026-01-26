@@ -1,15 +1,13 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { 
-  BookOpen, 
-  FileText, 
-  HelpCircle, 
+import {
+  HelpCircle,
   Video,
-  ArrowRight,
   AlertTriangle,
   Droplets,
   TreeDeciduous,
-  Shield
+  Shield,
+  Clock
 } from 'lucide-react'
 import { BookNowButton } from '@/components/ui/book-now-button'
 
@@ -130,19 +128,25 @@ export default function SewerDrainResourcesPage() {
           {guides.map((guide, index) => {
             const Icon = guide.icon
             return (
-              <div 
+              <div
                 key={index}
-                className="bg-white rounded-xl p-5 shadow-sm border border-slate-200 hover:shadow-md transition-shadow"
+                className="bg-white rounded-xl p-5 shadow-sm border border-slate-200"
               >
                 <div className="flex items-start gap-4">
                   <div className="p-2 bg-[var(--color-primary)]/10 rounded-lg">
                     <Icon className="w-5 h-5 text-[var(--color-primary)]" />
                   </div>
                   <div className="flex-1">
-                    <span className="text-xs font-medium text-[var(--color-accent)] uppercase tracking-wide">
-                      {guide.category}
-                    </span>
-                    <h3 className="font-semibold text-slate-900 mt-1">{guide.title}</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xs font-medium text-[var(--color-accent)] uppercase tracking-wide">
+                        {guide.category}
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 bg-amber-100 text-amber-700 rounded">
+                        <Clock className="w-3 h-3" />
+                        Coming Soon
+                      </span>
+                    </div>
+                    <h3 className="font-semibold text-slate-900">{guide.title}</h3>
                     <p className="text-sm text-slate-600 mt-1">{guide.description}</p>
                   </div>
                 </div>
@@ -151,7 +155,11 @@ export default function SewerDrainResourcesPage() {
           })}
         </div>
         <p className="text-center text-slate-500 mt-6 text-sm">
-          Full articles coming soon! Subscribe to be notified.
+          Want to be notified when guides are available?{' '}
+          <Link href="/sewer-drain/contact" className="text-[var(--color-primary)] font-medium hover:underline">
+            Contact us
+          </Link>{' '}
+          to join our mailing list.
         </p>
       </section>
 

@@ -170,8 +170,7 @@ export function ContactForm() {
         setSubmitStatus('error')
         setSubmitMessage(result.error || 'Something went wrong. Please try again.')
       }
-    } catch (error) {
-      console.error('Form submission error:', error)
+    } catch {
       setSubmitStatus('error')
       setSubmitMessage('Unable to submit form. Please call us directly.')
     } finally {

@@ -148,8 +148,7 @@ export default function PlumbingContactPage() {
       } else {
         setSubmitStatus('error')
       }
-    } catch (error) {
-      console.error('Form error:', error)
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

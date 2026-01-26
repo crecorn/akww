@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Building2, BookOpen, FileText, CheckCircle2, ArrowRight, Phone } from 'lucide-react'
+import { Building2, BookOpen, CheckCircle2, ArrowRight, Phone, Clock } from 'lucide-react'
 import { siteConfig } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
@@ -74,16 +74,26 @@ export default function CommercialResourcesPage() {
         </h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {guides.map((guide, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-              <span className="text-xs font-semibold text-[var(--color-primary)] uppercase tracking-wide">{guide.category}</span>
-              <h3 className="text-lg font-bold text-slate-900 mt-2 mb-2">{guide.title}</h3>
-              <p className="text-slate-600 text-sm">{guide.description}</p>
-              <div className="mt-4 flex items-center gap-1 text-[var(--color-primary)] font-medium text-sm">
-                Coming Soon <FileText className="w-4 h-4" />
+            <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold text-[var(--color-primary)] uppercase tracking-wide">{guide.category}</span>
+                <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 bg-amber-100 text-amber-700 rounded">
+                  <Clock className="w-3 h-3" />
+                  Coming Soon
+                </span>
               </div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">{guide.title}</h3>
+              <p className="text-slate-600 text-sm">{guide.description}</p>
             </div>
           ))}
         </div>
+        <p className="text-center text-slate-500 mt-6 text-sm">
+          Want to be notified when guides are available?{' '}
+          <Link href="/commercial/contact" className="text-[var(--color-primary)] font-medium hover:underline">
+            Contact us
+          </Link>{' '}
+          to join our mailing list.
+        </p>
       </section>
 
       {/* FAQs */}

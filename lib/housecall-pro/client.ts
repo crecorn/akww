@@ -72,7 +72,6 @@ async function hcpRequest<T>(
   options: RequestInit = {}
 ): Promise<HCPApiResponse<T>> {
   if (!HCP_API_KEY) {
-    console.error('HOUSECALL_PRO_API_KEY is not set')
     return { success: false, error: 'API key not configured' }
   }
 
@@ -89,19 +88,17 @@ async function hcpRequest<T>(
     const data = await response.json()
 
     if (!response.ok) {
-      console.error('HCP API Error:', response.status, data)
-      return { 
-        success: false, 
-        error: data.message || data.error || `API Error: ${response.status}` 
+      return {
+        success: false,
+        error: data.message || data.error || `API Error: ${response.status}`
       }
     }
 
     return { success: true, data }
   } catch (error) {
-    console.error('HCP API Request Failed:', error)
-    return { 
-      success: false, 
-      error: error instanceof Error ? error.message : 'Request failed' 
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Request failed'
     }
   }
 }

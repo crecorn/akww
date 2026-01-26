@@ -1,16 +1,15 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { 
-  BookOpen, 
-  FileText, 
-  HelpCircle, 
+import {
+  BookOpen,
+  FileText,
+  HelpCircle,
   Video,
-  Download,
   ArrowRight,
   Droplets,
   AlertTriangle,
   DollarSign,
-  Home
+  Clock
 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -24,32 +23,24 @@ const guides = [
     description: 'Everything you need to know about keeping your basement dry, from DIY tips to professional solutions.',
     icon: BookOpen,
     category: 'Guide',
-    readTime: '10 min read',
-    href: '#',
   },
   {
     title: 'Understanding Foundation Cracks',
     description: 'Learn which cracks are cosmetic and which indicate serious structural issues requiring repair.',
     icon: AlertTriangle,
     category: 'Guide',
-    readTime: '7 min read',
-    href: '#',
   },
   {
     title: 'Sump Pump Buyer\'s Guide',
     description: 'How to choose the right sump pump for your home, including backup options and sizing.',
     icon: Droplets,
     category: 'Guide',
-    readTime: '8 min read',
-    href: '#',
   },
   {
     title: 'Crawl Space Health Checklist',
     description: 'A printable checklist to assess your crawl space condition and identify potential problems.',
     icon: FileText,
     category: 'Checklist',
-    readTime: '5 min read',
-    href: '#',
   },
 ]
 
@@ -84,17 +75,14 @@ const videoResources = [
   {
     title: 'How Interior French Drains Work',
     duration: '3:45',
-    thumbnail: '/images/video-placeholder.jpg',
   },
   {
     title: 'Signs You Need Basement Waterproofing',
     duration: '5:12',
-    thumbnail: '/images/video-placeholder.jpg',
   },
   {
     title: 'Sump Pump Maintenance Tips',
     duration: '4:30',
-    thumbnail: '/images/video-placeholder.jpg',
   },
 ]
 
@@ -128,23 +116,25 @@ export default function WaterproofingResourcesPage() {
         </h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {guides.map((guide, index) => (
-            <Link
+            <div
               key={index}
-              href={guide.href}
-              className="group bg-white rounded-xl p-5 shadow-sm border border-slate-200 hover:shadow-md hover:border-[var(--color-primary)]/30 transition-all"
+              className="bg-white rounded-xl p-5 shadow-sm border border-slate-200"
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--color-primary)] transition-colors">
-                  <guide.icon className="w-5 h-5 text-[var(--color-primary)] group-hover:text-white transition-colors" />
+                <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center flex-shrink-0">
+                  <guide.icon className="w-5 h-5 text-[var(--color-primary)]" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-xs font-medium px-2 py-0.5 bg-slate-100 rounded text-slate-600">
                       {guide.category}
                     </span>
-                    <span className="text-xs text-slate-400">{guide.readTime}</span>
+                    <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 bg-amber-100 text-amber-700 rounded">
+                      <Clock className="w-3 h-3" />
+                      Coming Soon
+                    </span>
                   </div>
-                  <h3 className="font-bold text-slate-900 mb-1 group-hover:text-[var(--color-primary)] transition-colors">
+                  <h3 className="font-bold text-slate-900 mb-1">
                     {guide.title}
                   </h3>
                   <p className="text-sm text-slate-600 line-clamp-2">
@@ -152,11 +142,15 @@ export default function WaterproofingResourcesPage() {
                   </p>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
-        <p className="text-sm text-slate-500 mt-4 italic">
-          More guides coming soon! Check back for new content.
+        <p className="text-sm text-slate-500 mt-4 text-center">
+          Want to be notified when guides are available?{' '}
+          <Link href="/waterproofing/contact" className="text-[var(--color-primary)] font-medium hover:underline">
+            Contact us
+          </Link>{' '}
+          to join our mailing list.
         </p>
       </section>
 
