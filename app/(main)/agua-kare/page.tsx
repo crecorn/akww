@@ -16,7 +16,7 @@ import { siteConfig } from '@/lib/constants/site'
 
 export const metadata: Metadata = {
   title: 'Aqua-Kare Plumbing Protection Plan | AK Water Works',
-  description: 'Peace of Mind. Protected Plumbing. Priority Service. Join the Aqua-Kare plumbing maintenance program for annual inspections, 10% savings, and priority scheduling.',
+  description: 'Stop paying full price for plumbing repairs. Aqua-Kare members save 10% on all services, get priority scheduling, and annual inspections to prevent costly emergencies.',
 }
 
 const maintenanceBenefits = [
@@ -102,9 +102,9 @@ export default function AquaKarePage() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Welcome to
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">              
               <span className="block text-yellow-300">Aqua-Kare!</span>
+              Plumbing Protection & Maintenance Program
             </h1>
 
             {/* Tagline */}
@@ -114,8 +114,8 @@ export default function AquaKarePage() {
 
             {/* Subheading */}
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              With your Plumbing Maintenance Agreement, you&apos;ve taken a smart step to protect your
-              home&apos;s plumbing, save on future repairs, and enjoy peace of mind all year long.
+              Stop waiting for plumbing emergencies to strike. Aqua-Kare members save 10% on every service call,
+              get priority scheduling, and receive annual inspections that catch small problems before they become expensive disasters.
             </p>
 
             {/* CTA */}
@@ -124,7 +124,7 @@ export default function AquaKarePage() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-bold text-lg rounded-lg transition-colors"
             >
               <Phone className="w-5 h-5" />
-              Call for More Information
+              Call to Join Today
             </a>
             <p className="text-blue-200 mt-4 text-lg">{siteConfig.phone}</p>
           </div>
@@ -146,24 +146,25 @@ export default function AquaKarePage() {
       <div className="bg-slate-50">
         <div className="container mx-auto px-4 py-16 md:py-20">
 
-          {/* Thank You Message */}
+          {/* Value Proposition */}
           <section className="mb-16 max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-              Thank You for Joining Aqua-Kare!
+              Why Smart Homeowners Join Aqua-Kare
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed">
-              We&apos;re grateful you&apos;ve trusted AK Water Works to care for your home&apos;s plumbing.
-              Your membership means more reliable service, extra savings, and peace of mind for your household.
+              The average emergency plumbing repair costs $500+. One prevented leak or caught problem
+              pays for your membership many times over. Plus, you&apos;ll save 10% on every service call—whether
+              it&apos;s a simple fix or a major repair.
             </p>
           </section>
 
           {/* Maintenance Benefits */}
           <section className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-4">
-              Aqua-Kare Plumbing Maintenance Benefits
+              What You Get as an Aqua-Kare Member
             </h2>
             <p className="text-xl text-slate-600 text-center mb-12 max-w-2xl mx-auto">
-              Your plan includes annual inspections and exclusive member perks.
+              Annual inspections, exclusive discounts, and priority service—all designed to save you money and prevent emergencies.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {maintenanceBenefits.map((benefit) => {
@@ -194,12 +195,12 @@ export default function AquaKarePage() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                    Your Benefits Apply to All Services
+                    Save 10% on Everything We Do
                   </h2>
                   <p className="text-slate-600 mb-6">
-                    Our team is here to keep your water systems running smoothly—so you can
-                    relax knowing we&apos;ve got you covered. Your 10% discount and priority
-                    scheduling apply to everything we do.
+                    Your Aqua-Kare discount isn&apos;t limited to one service—it applies to every
+                    plumbing job, big or small. Plus, members always get scheduled first when
+                    you need us most.
                   </p>
                   <div className="grid grid-cols-2 gap-3">
                     {servicesIncluded.map((service) => (
@@ -232,16 +233,15 @@ export default function AquaKarePage() {
             </div>
           </section>
 
-          {/* Stay Connected */}
+          {/* Social Proof */}
           <section className="mb-16">
             <div className="bg-slate-100 rounded-2xl p-8 text-center">
               <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                Connect • Contact • Review
+                Join Hundreds of Happy Homeowners
               </h2>
               <p className="text-slate-600 max-w-2xl mx-auto mb-6">
-                Stay connected with us on social media for tips, updates, and special offers.
-                And if you&apos;ve had a great experience, we&apos;d love for you to share it—please
-                leave us a review online to help others discover the Aqua-Kare difference!
+                Aqua-Kare members across Northeast Ohio trust us to protect their homes.
+                Follow us on Facebook to see why families choose AK Water Works for their plumbing needs.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a
@@ -250,13 +250,13 @@ export default function AquaKarePage() {
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-[var(--color-primary)] text-white rounded-lg font-medium hover:bg-[var(--color-primary-dark)] transition-colors"
                 >
-                  Follow Us on Facebook
+                  See What Members Say
                 </a>
                 <a
                   href={`tel:${siteConfig.phoneRaw}`}
                   className="px-6 py-3 bg-white rounded-lg shadow-sm border border-slate-200 text-slate-700 font-medium hover:bg-slate-50 transition-colors"
                 >
-                  Contact Us
+                  Call to Learn More
                 </a>
               </div>
             </div>
@@ -265,21 +265,21 @@ export default function AquaKarePage() {
           {/* Final CTA */}
           <section className="bg-gradient-to-br from-[var(--color-primary)] to-blue-700 rounded-2xl p-8 md:p-12 text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Questions About Aqua-Kare?
+              Ready to Start Saving?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-xl mx-auto">
-              Our team is happy to explain the Aqua-Kare benefits and help you
-              get started. Give us a call!
+              Call now to join Aqua-Kare and start enjoying 10% off every service,
+              priority scheduling, and annual inspections that protect your home.
             </p>
             <a
               href={`tel:${siteConfig.phoneRaw}`}
               className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white font-bold text-xl rounded-lg transition-colors"
             >
               <Phone className="w-6 h-6" />
-              {siteConfig.phone}
+              Join Aqua-Kare: {siteConfig.phone}
             </a>
             <p className="text-blue-200 text-sm mt-6">
-              akwaterworks.net • We&apos;re here to help
+              No contracts. Cancel anytime. Start saving today.
             </p>
           </section>
 
